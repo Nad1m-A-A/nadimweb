@@ -26,6 +26,9 @@ Two audiences, two pages:
 
 - Visual rules live in [DESIGN.md](DESIGN.md); read it before building UI.
 - Components: `src/components/{layout,sections,ui,icons,providers}`, kebab-case filenames.
+- When writing JSX, consider whether it should be its own component. Extract when:
+  1. There are so many sibling elements that it gets hard to maintain.
+  2. It will likely be reused in multiple places.
 - Path alias `@/` maps to `src/`.
 - English only.
 - Avoid custom CSS; use Tailwind utilities and tokens.
