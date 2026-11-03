@@ -15,8 +15,8 @@ import {
   type CSSProperties,
   type PointerEvent as ReactPointerEvent,
 } from "react";
-import { ArrowUpRight } from "lucide-react";
-import logo from "./logo-white.png";
+// import { ArrowUpRight } from "lucide-react";
+// import logo from "./logo-white.png";
 import type { StampLang } from "./copy";
 
 // The panel is a separate chunk, fetched on first hover, focus or tap of the pill.
@@ -134,7 +134,7 @@ export function DevStamp({ lang = "en" }: { lang?: StampLang }) {
         }}
         className="nws-trigger"
       >
-        <img src={logo} alt="" width={36} height={42} className="nws-mark" />
+        {/* <img src={logo} alt="" width={36} height={42} className="nws-mark" /> */}
         <span className="nws-word">
           <span className="nws-by">{labels[lang].by}</span>
           <span className="nws-name" dir="ltr">
@@ -145,7 +145,7 @@ export function DevStamp({ lang = "en" }: { lang?: StampLang }) {
             <span className="nws-visit-site" dir="ltr">
               nadimweb.com
             </span>
-            <ArrowUpRight className="nws-icon-sm nws-flip" aria-hidden="true" />
+            {/* <ArrowUpRight className="nws-icon-sm nws-flip" aria-hidden="true" /> */}
           </span>
         </span>
       </button>
