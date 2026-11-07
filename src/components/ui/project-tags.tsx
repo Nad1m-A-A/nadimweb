@@ -1,8 +1,11 @@
 export function ProjectTags({ tags }: { tags: string[] }) {
   return (
-    <ul className="flex flex-wrap justify-center gap-2">
+    <ul className="flex flex-wrap gap-2">
       {tags.map((tag) => (
-        <li key={tag} className="rounded bg-gray/10 px-2 py-1 text-xs text-gray">
+        <li
+          key={tag}
+          className="rounded-full bg-white/15 px-3 py-1 text-xs text-white"
+        >
           {tag}
         </li>
       ))}
