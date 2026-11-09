@@ -72,7 +72,7 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
         {/* Fills the page (positioned against <main>), lit in the active project's colour. */}
         <CareerBackdrop color={project.color} image={project.image} />
         {/* Left column: names stacked above the image. */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-2">
           <div className="relative h-48 w-full lg:h-60 lg:max-w-[45%]">
             <ProjectNameRotator projects={projects} steps={steps} />
           </div>
@@ -83,7 +83,8 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
             rel="noreferrer"
             tabIndex={-1}
             aria-hidden
-            className="relative block aspect-16/10 w-full shrink-0 overflow-hidden rounded-[2px] shadow-rest lg:w-[31%]"
+            // Screenshots are 1836×924. Width grows to fit that ratio; height stays what the old 31%-wide 16:10 box had.
+            className="relative block aspect-[1836/924] w-full shrink-0 overflow-hidden rounded-[2px] shadow-rest lg:w-[38.5%]"
           >
             <AnimatePresence initial={false}>
               <motion.div
@@ -101,7 +102,7 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
                   priority
                   sizes="(min-width: 1024px) 31vw, 100vw"
                   draggable={false}
-                  className="object-cover object-top "
+                  className="object-cover object-top border-2 border-black"
                 />
               </motion.div>
             </AnimatePresence>

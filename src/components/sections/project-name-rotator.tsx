@@ -8,11 +8,9 @@ const SHIFT_S = 0.65;
 /** The list is rendered this many times so there are always names above and below the active one. */
 const COPIES = 3;
 
+/** Only the active name is visible; the others fade out as the list slides. */
 function opacityFor(dist: number) {
-  if (dist === 0) return 1;
-  if (dist === 1) return 0.42;
-  if (dist === 2) return 0.22;
-  return 0.1;
+  return dist === 0 ? 1 : 0;
 }
 
 const mod = (n: number, m: number) => ((n % m) + m) % m;
