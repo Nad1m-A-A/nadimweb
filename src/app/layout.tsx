@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { appFont } from "@/lib/fonts";
+import { appFont, displayFont } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: {
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${appFont.className} h-full antialiased`}>
+    <html lang="en" className={`${appFont.className} ${displayFont.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );

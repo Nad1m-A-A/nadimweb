@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ProjectsCarousel } from "@/components/sections/projects-carousel";
+import { ProjectsShowcase } from "@/components/sections/projects-showcase";
 import { projects } from "@/data/projects";
 
 export const metadata: Metadata = { title: "Career" };
@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Career" };
 export default function CareerPage() {
   return (
     <main className="flex w-full flex-1 flex-col">
-      <ProjectsCarousel projects={projects} />
+      <ProjectsShowcase projects={projects} />
     </main>
   );
 }
