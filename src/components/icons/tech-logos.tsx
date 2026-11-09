@@ -27,7 +27,7 @@ export function InertiaLogo(props: LogoProps) {
 }
 
 export function NextjsLogo(props: LogoProps) {
-  return <SiNextdotjs aria-label="Next.js" color="#000000" {...props} />;
+  return <SiNextdotjs aria-label="Next.js" color="currentColor" {...props} />;
 }
 
 export function TypescriptLogo(props: LogoProps) {

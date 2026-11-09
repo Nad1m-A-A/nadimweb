@@ -3,28 +3,7 @@
 import Image from "next/image";
 import FadeIn from "@/components/ui/fade-in";
 import SectionTitle from "@/components/ui/section-title";
-
-const infoItems = [
-  {
-    title: "Email",
-    href: "mailto:nadim.alaa@hotmail.com",
-    label: "nadim.alaa@hotmail.com",
-  },
-  {
-    title: "GitHub",
-    href: "https://github.com/Nad1m-A-A",
-    label: "github.com/Nad1m-A-A",
-  },
-  {
-    title: "Location",
-    label: "United Arab Emirates",
-  },
-  {
-    title: "LinkedIn",
-    href: "https://www.linkedin.com/in/nadim-alaa-955356276/",
-    label: "linkedin.com/in/nadim-alaa",
-  },
-] as const;
+import { infoItems } from "@/data/info";
 
 export default function InfoSection() {
   return (
