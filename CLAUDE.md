@@ -8,19 +8,16 @@ Personal site of Nadim Alaa, fullstack developer.
 
 Two audiences, two pages:
 
-| Route | Audience | Purpose |
-| --- | --- | --- |
-| `/` | Clients | Multi-section page showing work and service packages. _Sections: TBD_ |
-| `/career` | Recruiters | One well-designed projects carousel only. _Library: TBD (two candidates)_ |
+| Route     | Audience   | Purpose                                                               |
+| --------- | ---------- | --------------------------------------------------------------------- |
+| `/`       | Clients    | Multi-section page showing work and service packages. _Sections: TBD_ |
+| `/career` | Recruiters | One well-designed projects carousel only. _Library_                   |
 
 ## Stack
 
-- Next.js 16 (App Router, `src/app`), React 19, TypeScript
-- Tailwind CSS v4 (tokens in `src/app/globals.css`, `@theme inline`)
-- Animation: GSAP + `@gsap/react` (registered in `src/lib/gsap/register.ts`), plus `motion` _(keeping both for now)_
-- Light only, no dark mode (`next-themes` is currently forced dark; remove it in setup)
-- `react-icons`, thin style
-- Font: League Spartan via `next/font` (`src/lib/fonts.ts`)
+- Next.js 16, React 19, TypeScript
+- Tailwind CSS v4
+- Animation: GSAP + `@gsap/react` (registered in `src/lib/gsap/register.ts`), plus `motion`
 
 ## Conventions
 
@@ -29,20 +26,3 @@ Two audiences, two pages:
 - When writing JSX, consider whether it should be its own component. Extract when:
   1. There are so many sibling elements that it gets hard to maintain.
   2. It will likely be reused in multiple places.
-- Path alias `@/` maps to `src/`.
-- English only.
-- Avoid custom CSS; use Tailwind utilities and tokens.
-- Content: Nadim provides data in the next phase. Setup first.
-- _TBD: deployment target._
-
-## Commands
-
-```bash
-npm run dev
-npm run build
-npm run lint
-```
-
-## Working rules
-
-- Do not push to the remote without asking Nadim first.
