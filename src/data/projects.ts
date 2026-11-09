@@ -45,4 +45,12 @@ export const projects: Project[] = [
       "Bilingual site for a Dubai media training center, with a 3D model and an office map.",
     tags: ["Next.js", "Mapbox", "SEO"],
   },
+  {
+    title: "AB Designer",
+    url: "",
+    image: "/projects/designerab.png",
+    color: "#888888",
+    summary: "",
+    tags: [],
+  },
 ];

@@ -72,7 +72,7 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
         {/* Fills the page (positioned against <main>), lit in the active project's colour. */}
         <CareerBackdrop color={project.color} image={project.image} />
         {/* Left column: names stacked above the image. */}
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col">
           <div className="relative h-48 w-full lg:h-60 lg:max-w-[45%]">
             <ProjectNameRotator projects={projects} steps={steps} />
           </div>
