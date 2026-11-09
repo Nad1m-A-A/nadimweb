@@ -49,7 +49,7 @@ const projects: Project[] = [
         available: true,
     },
     {
-        name: "Carne Media Training Center",
+        name: "Carne Media",
         highlights: [
             "Next.js app with full Arabic/English localization and locale-aware routing",
             "SEO-ready structure with metadata, crawlable pages, and bilingual content",

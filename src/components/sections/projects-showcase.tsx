@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion, MotionConfig } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { ProjectNameRotator } from "@/components/sections/project-name-rotator";
+import { CareerBackdrop } from "@/components/ui/career-backdrop";
 import type { Project } from "@/data/projects";
 
 /** Quiet time (ms) that ends a wheel gesture, so one trackpad swipe = one step. */
@@ -68,9 +69,11 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
         aria-label="Projects"
         className="flex min-h-0 w-full flex-1 flex-col justify-end px-6 pb-8 lg:px-12 lg:pb-12"
       >
-        {/* Row is as tall as the image; the names block stretches to match it. */}
-        <div className="flex flex-col gap-6 lg:flex-row lg:justify-between lg:gap-12">
-          <div className="relative h-48 w-full lg:h-auto lg:max-w-[45%] lg:flex-1">
+        {/* Fills the page (positioned against <main>), lit in the active project's colour. */}
+        <CareerBackdrop color={project.color} image={project.image} />
+        {/* Left column: names stacked above the image. */}
+        <div className="flex flex-col gap-6">
+          <div className="relative h-48 w-full lg:h-60 lg:max-w-[45%]">
             <ProjectNameRotator projects={projects} steps={steps} />
           </div>
 
@@ -98,7 +101,7 @@ export function ProjectsShowcase({ projects }: { projects: Project[] }) {
                   priority
                   sizes="(min-width: 1024px) 31vw, 100vw"
                   draggable={false}
-                  className="object-cover object-top grayscale"
+                  className="object-cover object-top "
                 />
               </motion.div>
             </AnimatePresence>
