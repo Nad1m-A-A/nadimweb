@@ -69,7 +69,47 @@ export const careerTabs: CareerTab[] = [
       },
     ],
   },
-  { id: "backend", label: "Backend" },
+  {
+    id: "backend",
+    label: "Backend",
+    steps: [
+      {
+        label: "Model",
+        text: "I shape the database around how the business really works: its records, workflows, roles and people, in MySQL or PostgreSQL.",
+      },
+      {
+        label: "Logic",
+        text: "I turn manual steps into rules the system enforces, minimizing human error and raising productivity.",
+      },
+      {
+        label: "Consistency",
+        text: "Proven design patterns give every feature the same shape, so the codebase stays predictable as it grows, and frontend and backend types never get out of sync.",
+      },
+      {
+        label: "Resilience",
+        text: "Nothing is lost when something fails. Records are saved first and marked as synced or failed, background jobs take on the slow work, and scheduled tasks pick up whatever was left behind.",
+      },
+      {
+        label: "Security",
+        text: "Secrets stay on the server, each role sees only what it needs, and sign-in uses refresh-token rotation with reuse detection and Google OAuth.",
+      },
+      {
+        label: "Test",
+        text: "Unit and integration tests in Pest, Vitest and Jest, with coverage tracked to find the gaps. Anything that breaks once gets a test, so new features never break what already works.",
+      },
+    ],
+    references: [
+      { label: "flowrigs.app", url: "https://flowrigs.app" },
+      {
+        label: "dashboards.nadimweb.com",
+        url: "https://dashboards.nadimweb.com/",
+      },
+      {
+        label: "gold.nadimweb.com",
+        url: "https://gold.nadimweb.com/",
+      },
+    ],
+  },
   { id: "devops", label: "DevOps" },
   { id: "stack", label: "Stack" },
   { id: "ai", label: "AI" },
