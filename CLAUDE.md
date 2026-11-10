@@ -11,7 +11,7 @@ Two audiences, two pages. The home page's look is the design for the whole site.
 | Route | Audience | Purpose |
 | --- | --- | --- |
 | `/` | Clients | Multi-section page showing work and service packages. _Sections: TBD_ |
-| `/career` | Recruiters | Navbar with the `dev-stamp/` logo and links to GitHub, LinkedIn and `/`. One section: a carousel at the bottom with the active item centered, and above it a short project block (name, tags, description). Same look as the home page. |
+| `/career` | Recruiters | |
 
 ## Stack
 
@@ -21,7 +21,6 @@ Two audiences, two pages. The home page's look is the design for the whole site.
 - Light only, no dark mode
 - `react-icons`: Lucide (`lu`) for UI, `si`/`fa` for brand logos
 - Font via `next/font` (`src/lib/fonts.ts`): League Spartan only
-- Carousel (`/career`): the owner supplies the carousel code; no carousel library
 
 ## Conventions
 

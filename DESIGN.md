@@ -1,6 +1,6 @@
 # Design
 
-The home page (`/`) is the reference for the whole site. Every page, `/career` included, follows these rules.
+The home page (`/`) is the reference for the whole site. Every page follows these rules.
 
 ## Colour
 
@@ -50,15 +50,6 @@ Light only. Tokens live in `src/app/globals.css` (`:root` + `@theme inline`).
 - Content swaps (accordion panels, project changes): short fade with `motion` `AnimatePresence`.
 - Rotating text: GSAP (`specialty-rotator.tsx` is the pattern).
 - Respect `prefers-reduced-motion`.
-
-## Career page
-
-- Same look as the home page.
-- Navbar: the logo from `dev-stamp/` (`logo-black.png`, see `DevStamp.tsx`), plus links to [GitHub](https://github.com/Nad1m-A-A), [LinkedIn](https://www.linkedin.com/in/nadim-alaa-955356276/) and home `/`.
-- One section:
-  - Bottom: a carousel with the active item centered. Use the carousel code the owner supplies; no carousel library.
-  - Above it: a short project block with the name, tags and a brief description of the active item.
-- Keyboard: left/right arrows move the carousel; controls have visible focus and aria-labels.
 
 ## Voice
 
