@@ -1,11 +1,4 @@
-import { League_Spartan, Cormorant_Garamond } from "next/font/google";
-
-export const displayFont = Cormorant_Garamond({
-    subsets: ["latin"],
-    weight: "300",
-    style: ["normal", "italic"],
-    variable: "--font-cormorant",
-});
+import { League_Spartan } from "next/font/google";
 
 export const appFont = League_Spartan({
     subsets: ["latin"],
