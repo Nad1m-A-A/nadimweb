@@ -15,6 +15,8 @@ const tabs: CareerTab[] = [
   { id: "overview", label: "Overview" },
   { id: "frontend", label: "Frontend" },
   { id: "backend", label: "Backend" },
+  { id: "devops", label: "DevOps" },
+  { id: "stack", label: "Stack" },
 ];
 
 export default function CareerTabs() {
@@ -37,7 +39,7 @@ export default function CareerTabs() {
                   aria-selected={selected}
                   aria-controls={`panel-${tab.id}`}
                   onClick={() => setActiveId(tab.id)}
-                  className={`-mb-px cursor-pointer border-b px-4 py-3 text-sm font-medium transition-colors duration-300 ease-calm sm:text-base ${
+                  className={`-mb-px cursor-pointer border-b px-2 py-3 sm:px-4 text-sm font-medium transition-colors duration-300 ease-calm sm:text-base ${
                     selected
                       ? "border-accent text-foreground"
                       : "border-transparent text-muted hover:text-foreground"
