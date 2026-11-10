@@ -23,3 +23,4 @@ Two audiences, two pages. The home page's look is the design for the whole site.
 - When writing JSX, consider whether it should be its own component. Extract when:
   1. There are so many sibling elements that it gets hard to maintain.
   2. It will likely be reused in multiple places.
+- One component per JSX/TSX file. Never define a second component in the same file; move it to its own file.
