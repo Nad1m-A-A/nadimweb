@@ -15,7 +15,7 @@ export const infoItems = [
   },
   {
     title: "LinkedIn",
-    href: "https://www.linkedin.com/in/nadim-alaa-955356276/",
-    label: "linkedin.com/in/nadim-alaa",
+    href: "https://www.linkedin.com/in/nadimweb/",
+    label: "linkedin.com/in/nadimweb",
   },
 ] as const;
