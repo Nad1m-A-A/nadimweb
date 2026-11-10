@@ -1,7 +1,6 @@
 "use client";
 
 import { HeroPerspectiveGrid } from "@/components/sections/hero-perspective-grid";
-import { HeroStackVisual } from "@/components/sections/hero-stack-visual";
 import { SpecialtyRotator } from "@/components/sections/specialty-rotator";
 import FadeIn from "@/components/ui/fade-in";
 
@@ -24,8 +23,6 @@ export default function HeroSection() {
           </FadeIn>
         </div>
       </div>
-
-      <HeroStackVisual />
     </section>
   );
 }
