@@ -6,22 +6,22 @@ Personal site of Nadim Alaa, fullstack developer.
 
 ## Goal
 
-Two audiences, two pages:
+Two audiences, two pages. The home page's look is the design for the whole site.
 
 | Route | Audience | Purpose |
 | --- | --- | --- |
 | `/` | Clients | Multi-section page showing work and service packages. _Sections: TBD_ |
-| `/career` | Recruiters | One minimal projects showcase only: large full-colour image bottom-right, arrow controls above it, project name in large thin serif on the left. No indicators, descriptions or tags. Quiet, never showy. |
+| `/career` | Recruiters | Navbar with the `dev-stamp/` logo and links to GitHub, LinkedIn and `/`. One section: a carousel at the bottom with the active item centered, and above it a short project block (name, tags, description). Same look as the home page. |
 
 ## Stack
 
 - Next.js 16 (App Router, `src/app`), React 19, TypeScript
 - Tailwind CSS v4 (tokens in `src/app/globals.css`, `@theme inline`)
-- Animation: GSAP + `@gsap/react` (registered in `src/lib/gsap/register.ts`), plus `motion` _(keeping both for now)_
-- Light only, no dark mode (`next-themes` is currently forced dark; remove it in setup)
-- `react-icons`, thin style
-- Fonts via `next/font` (`src/lib/fonts.ts`): League Spartan for UI (`font-sans`), Cormorant Garamond Light for display/project names (`font-display`)
-- Carousel: no library. Build the showcase with React state + GSAP/motion (remove `swiper` once replaced)
+- Animation: GSAP + `@gsap/react` (registered in `src/lib/gsap/register.ts`) for rotators, `motion` for `FadeIn` and content swaps
+- Light only, no dark mode
+- `react-icons`: Lucide (`lu`) for UI, `si`/`fa` for brand logos
+- Font via `next/font` (`src/lib/fonts.ts`): League Spartan only
+- Carousel (`/career`): the owner supplies the carousel code; no carousel library
 
 ## Conventions
 
