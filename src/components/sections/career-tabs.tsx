@@ -3,27 +3,12 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import FadeIn from "@/components/ui/fade-in";
+import CareerTabPanel from "@/components/sections/career-tab-panel";
+import { careerTabs } from "@/data/career-tabs";
 
 const panelEase = [0.22, 1, 0.36, 1] as const;
 
-type CareerTab = {
-  id: string;
-  label: string;
-  body?: string;
-};
-
-const tabs: CareerTab[] = [
-  {
-    id: "overview",
-    label: "Overview",
-    body: "FullStack web developer with 4+ years of experience building ERP systems, internal dashboards and multilingual marketing websites for UAE businesses, mainly with Laravel, React, and Next.js. I take projects from the first conversation with the client all the way to production: database design, APIs, UI/UX, automated tests and Docker deploys. I care about the quality of my software and aim to improve the web.",
-  },
-  { id: "frontend", label: "Frontend" },
-  { id: "backend", label: "Backend" },
-  { id: "devops", label: "DevOps" },
-  { id: "stack", label: "Stack" },
-  { id: "ai", label: "AI" },
-];
+const tabs = careerTabs;
 
 export default function CareerTabs() {
   const [activeId, setActiveId] = useState(tabs[0].id);
@@ -74,7 +59,7 @@ export default function CareerTabs() {
             transition={{ duration: 0.3, ease: panelEase }}
             className="max-w-2xl text-base leading-8 text-muted sm:text-lg"
           >
-            {active.body ?? `${active.label} content coming soon.`}
+            <CareerTabPanel tab={active} />
           </motion.div>
         </AnimatePresence>
       </div>
