@@ -17,12 +17,6 @@ Two audiences, two pages. The home page's look is the design for the whole site.
 
 - Next.js 16 (App Router, `src/app`), React 19, TypeScript
 - Tailwind CSS v4 (tokens in `src/app/globals.css`, `@theme inline`)
-- Animation: GSAP + `@gsap/react` (registered in `src/lib/gsap/register.ts`) for rotators, `motion` for `FadeIn` and content swaps
-- Light only, no dark mode
-- `react-icons`: Lucide (`lu`) for UI, `si`/`fa` for brand logos
-- Font via `next/font` (`src/lib/fonts.ts`): League Spartan only
-
-## Conventions
 
 - Visual rules live in [DESIGN.md](DESIGN.md); read it before building UI.
 - Components: `src/components/{layout,sections,ui,icons,providers}`, kebab-case filenames.

@@ -4,7 +4,7 @@ The home page (`/`) is the reference for the whole site. Every page follows thes
 
 ## Colour
 
-Light only. Tokens live in `src/app/globals.css` (`:root` + `@theme inline`).
+Tokens live in `src/app/globals.css`
 
 | Token | Value | Use |
 | --- | --- | --- |
@@ -16,13 +16,10 @@ Light only. Tokens live in `src/app/globals.css` (`:root` + `@theme inline`).
 | `border` | `foreground` at 12% (`color-mix`) | All lines and dividers |
 
 - Text selection: accent at 35%.
-- No other colours. No gradients except the button hover below.
-
-> These tokens and the `.section`, `.inner-section`, `.app_container` and `.bg-accent-shift` utilities were removed from `globals.css` in commit `248c9d5`. Restore them from `248c9d5^:src/app/globals.css` (light values only, no `.dark` block).
 
 ## Type
 
-- One font: League Spartan (`src/lib/fonts.ts`), weights 400-700. No serif.
+- One font: League Spartan (`src/lib/fonts.ts`), weights 400-700.
 - Section title (`SectionTitle`): `text-3xl sm:text-4xl font-semibold tracking-tight`, with a thin accent highlighter bar behind the text.
 - Item headings: `text-base sm:text-lg font-medium`; project names `text-xl sm:text-2xl font-semibold`.
 - Body: `text-sm sm:text-base leading-7 text-muted`, max width about `max-w-2xl`.
@@ -51,7 +48,7 @@ Light only. Tokens live in `src/app/globals.css` (`:root` + `@theme inline`).
 - Rotating text: GSAP (`specialty-rotator.tsx` is the pattern).
 - Respect `prefers-reduced-motion`.
 
-## Voice
+## Voice`
 
 - Minimal wording.
 - English only.
