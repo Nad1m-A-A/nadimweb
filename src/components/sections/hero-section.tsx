@@ -6,7 +6,7 @@ import FadeIn from "@/components/ui/fade-in";
 
 export default function HeroSection() {
   return (
-    <section id="intro" className="bg-background">
+    <section id="intro" className="border-b border-border bg-background">
       <div className="relative flex min-h-[61.5vh] flex-1 flex-col items-center justify-center gap-4 overflow-hidden text-center font-thin">
         <HeroPerspectiveGrid />
         <FadeIn duration={0.8} delay={0.12} trigger="mount">

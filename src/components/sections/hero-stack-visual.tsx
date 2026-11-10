@@ -3,7 +3,7 @@ import { stackItems } from "@/data/stack";
 
 export function HeroStackVisual() {
   return (
-    <div className="relative z-10 w-full border-y border-border">
+    <div className="relative z-10 w-full border-b border-border">
       <div className="grid grid-cols-2 md:grid-cols-4">
         {stackItems.map(({ label, Logo }, index) => (
           <div
