@@ -110,7 +110,32 @@ export const careerTabs: CareerTab[] = [
       },
     ],
   },
-  { id: "devops", label: "DevOps" },
+  {
+    id: "devops",
+    label: "DevOps",
+    steps: [
+      {
+        label: "Images",
+        text: "Lean, multi-stage Docker images with cached layers: small to ship and quick to rebuild.",
+      },
+      {
+        label: "Servers",
+        text: "Comfortable working with Linux, Docker and SSH, from first setup to production.",
+      },
+      {
+        label: "Rollback",
+        text: "Every release is a versioned image, so a bad deploy goes back to any earlier version in one step.",
+      },
+      {
+        label: "Protect",
+        text: "Servers are reachable only through a private network. Secrets never touch the code, and containers run read-only, as non-root and with only the permissions they need.",
+      },
+      {
+        label: "Serve",
+        text: "Nginx compresses and caches files so pages load fast, and rate limits keep abuse out.",
+      },
+    ],
+  },
   { id: "stack", label: "Stack" },
   { id: "ai", label: "AI" },
 ];
