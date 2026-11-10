@@ -16,7 +16,7 @@ const tabs: CareerTab[] = [
   {
     id: "overview",
     label: "Overview",
-    body: "Full Stack Developer with 4+ years of experience building ERP systems, internal dashboards and multilingual marketing websites for UAE businesses, mainly with Laravel, React, and Next.js. I take projects from the first conversation with the client all the way to production: database design, APIs, right-to-left (RTL) interfaces, automated tests and Docker deploys. I care about applications that make a better web",
+    body: "Full Stack Developer with 4+ years of experience building ERP systems, internal dashboards and multilingual marketing websites for UAE businesses, mainly with Laravel, React, and Next.js. I take projects from the first conversation with the client all the way to production: database design, APIs, UI/UX, automated tests and Docker deploys. I care about applications that make a better web",
   },
   { id: "frontend", label: "Frontend" },
   { id: "backend", label: "Backend" },
