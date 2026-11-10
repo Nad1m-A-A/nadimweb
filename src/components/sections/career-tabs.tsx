@@ -16,7 +16,7 @@ const tabs: CareerTab[] = [
   {
     id: "overview",
     label: "Overview",
-    body: "Full Stack Developer with 4+ years of experience building ERP systems, internal dashboards and multilingual marketing websites for UAE businesses, mainly with Laravel, React, and Next.js. I take projects from the first conversation with the client all the way to production: database design, APIs, UI/UX, automated tests and Docker deploys. I care about the quality of my software and aim to improve the web.",
+    body: "FullStack web developer with 4+ years of experience building ERP systems, internal dashboards and multilingual marketing websites for UAE businesses, mainly with Laravel, React, and Next.js. I take projects from the first conversation with the client all the way to production: database design, APIs, UI/UX, automated tests and Docker deploys. I care about the quality of my software and aim to improve the web.",
   },
   { id: "frontend", label: "Frontend" },
   { id: "backend", label: "Backend" },
@@ -33,7 +33,11 @@ export default function CareerTabs() {
     <section className="section">
       <div className="app_container">
         <FadeIn trigger="mount" delay={0.3}>
-          <div role="tablist" aria-label="Career" className="flex border-b border-border">
+          <div
+            role="tablist"
+            aria-label="Career"
+            className="flex border-b border-border"
+          >
             {tabs.map((tab) => {
               const selected = tab.id === activeId;
               return (

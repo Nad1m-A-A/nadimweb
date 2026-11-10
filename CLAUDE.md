@@ -2,7 +2,7 @@
 
 # nadimweb
 
-Personal site of Nadim Alaa, fullstack developer.
+Personal site of Nadim Alaa, fullstack web developer.
 
 ## Goal
 

@@ -4,7 +4,7 @@ import { appFont } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: {
-    default: "Nadim Alaa, Fullstack Developer",
+    default: "Nadim Alaa, Fullstack Web Developer",
     template: "%s | Nadim Alaa",
   },
   description:
