@@ -20,7 +20,7 @@ export const careerTabs: CareerTab[] = [
   {
     id: "overview",
     label: "Overview",
-    body: "FullStack web developer with 4+ years of experience building enterprise systems, internal dashboards and multilingual marketing websites for UAE businesses, mainly with Laravel, React, and Next.js. I take projects from the first conversation with the client all the way to production: database design, APIs, UI/UX, automated tests and Docker deploys. I care about the quality of my software and aim to improve the web.",
+    body: "Product engineer with 4+ years of experience building enterprise systems, internal dashboards and multilingual marketing websites for UAE businesses, mainly with Laravel, React, and Next.js. I take projects from the first conversation with the client all the way to production: database design, APIs, UI/UX, automated tests and Docker deploys. I care about the quality of my software and aim to improve the web.",
   },
   {
     id: "frontend",
@@ -125,6 +125,10 @@ export const careerTabs: CareerTab[] = [
       {
         label: "Managing",
         text: "Comfortable working with Linux, Docker and SSH, from first setup to production.",
+      },
+      {
+        label: "Automating",
+        text: "CI/CD pipelines that test every change, deploy only when tests pass, and skip work that isn't needed. On one project, that cut run time by 22%.",
       },
       {
         label: "Versioning",

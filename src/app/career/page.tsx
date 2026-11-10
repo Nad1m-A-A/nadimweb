@@ -9,7 +9,7 @@ export default function CareerPage() {
   return (
     <>
       <CareerHeader />
-      <HeroSection />
+      <HeroSection title="Product Engineer" />
       <CareerTabs />
     </>
   );
