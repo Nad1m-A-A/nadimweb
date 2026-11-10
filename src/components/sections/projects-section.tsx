@@ -23,8 +23,8 @@ const projects: Project[] = [
     {
         name: "Multi-Business Dashboard",
         highlights: [
-            "Aggregates separate ERPs into one authenticated surface Using Inertia.js",
-            "Credentials and ERP URLs never reach the browser; all fetches go through an authorized server proxy",
+            "Aggregates separate enterprise systems into one authenticated surface Using Inertia.js",
+            "Credentials and enterprise system URLs never reach the browser; all fetches go through an authorized server proxy",
             "Role-based passcode auth with request auditing for non-admin roles",
             "Layered permissions (views / actions / businesses) enforced on the API and mirrored in the UI",
             "Same API contract in demo and production, with synthetic data swaps in without changing the frontend",
@@ -36,9 +36,9 @@ const projects: Project[] = [
         available: true,
     },
     {
-        name: "Jewelry Factory ERP",
+        name: "Jewelry Factory Enterprise System",
         highlights: [
-            "End-to-end ERP for gold manufacturing with dedicated modules for inventory, HR, production, and order tracking",
+            "End-to-end enterprise system for gold manufacturing with dedicated modules for inventory, HR, production, and order tracking",
             "Minimizes mistakes by automating complex and repetitive workflows",
             "Delivers precise material tracking and real-time metrics across all production stages",
             "Seamless, secure in-app subscription payments and renewals"
@@ -63,7 +63,7 @@ const projects: Project[] = [
     {
         name: "CodeTen Software Solutions",
         highlights: [
-            "React SPA with a multi-page marketing architecture for ERP, healthcare, e-invoicing, and apps",
+            "React SPA with a multi-page marketing architecture for enterprise systems, healthcare, e-invoicing, and apps",
             "Full Arabic/English bilingual experience across the site",
             "Positions Code 10 as a UAE-local software house with solution and client storytelling",
         ],

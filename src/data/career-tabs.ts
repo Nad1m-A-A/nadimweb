@@ -20,48 +20,52 @@ export const careerTabs: CareerTab[] = [
   {
     id: "overview",
     label: "Overview",
-    body: "FullStack web developer with 4+ years of experience building ERP systems, internal dashboards and multilingual marketing websites for UAE businesses, mainly with Laravel, React, and Next.js. I take projects from the first conversation with the client all the way to production: database design, APIs, UI/UX, automated tests and Docker deploys. I care about the quality of my software and aim to improve the web.",
+    body: "FullStack web developer with 4+ years of experience building enterprise systems, internal dashboards and multilingual marketing websites for UAE businesses, mainly with Laravel, React, and Next.js. I take projects from the first conversation with the client all the way to production: database design, APIs, UI/UX, automated tests and Docker deploys. I care about the quality of my software and aim to improve the web.",
   },
   {
     id: "frontend",
     label: "Frontend",
     steps: [
       {
-        label: "Discover",
+        label: "Discovering",
         text: "Before a single line of code, I learn how the business really runs: who it serves, how it sells, and where things slow down.",
       },
       {
-        label: "Brand",
+        label: "Branding",
         text: "I find the feel that fits: the look, the imagery and the voice the brand speaks in.",
       },
       {
-        label: "UI/UX",
+        label: "Designing",
         text: "I design multilingual marketing sites that sell and strengthen the brand, and data-heavy dashboards that turn live data from 10+ businesses into clear views for 500+ users.",
       },
       {
-        label: "Copy",
+        label: "Copywriting",
         text: "Words that persuade, not just fill space. In English and Arabic, every line speaks to the right customer and moves them toward one action: a message or a call.",
       },
       {
-        label: "Build",
+        label: "Building",
         text: "React, Next.js and TypeScript in a decoupled, component-based architecture that stays easy to change. TanStack Query and Table for data, Tailwind CSS and shadcn/ui for the interface, GSAP and Motion to bring it to life.",
       },
       {
-        label: "Optimize",
+        label: "Optimizing",
         text: "Fast on any connection: code splitting, a bundle per language, dialogs and galleries that load on demand and preload on hover, deferred animation libraries, and responsive AVIF/JPEG images. On one site, first-load JavaScript dropped by 29%.",
       },
       {
-        label: "Ship",
+        label: "Shipping",
         text: "Built to be found and trusted: SEO metadata, Open Graph, hreflang and structured data, with Vitest and Jest tests behind every release.",
       },
     ],
     references: [
       { label: "carnemedia.ae", url: "https://carnemedia.ae" },
-      { label: "designerab.com", url: "https://www.designerab.com" },
       { label: "codeten.net", url: "https://codeten.net" },
+      { label: "designerab.com", url: "https://www.designerab.com" },
       {
         label: "dashboards.nadimweb.com",
         url: "https://dashboards.nadimweb.com/",
+      },
+      {
+        label: "cv.nadimweb.com",
+        url: "https://cv.nadimweb.com/",
       },
       {
         label: "mhmcollection.pages.dev",
@@ -74,27 +78,27 @@ export const careerTabs: CareerTab[] = [
     label: "Backend",
     steps: [
       {
-        label: "Model",
+        label: "Modeling",
         text: "I shape the database around how the business really works: its records, workflows, roles and people, in MySQL or PostgreSQL.",
       },
       {
-        label: "Logic",
+        label: "Automating",
         text: "I turn manual steps into rules the system enforces, minimizing human error and raising productivity.",
       },
       {
-        label: "Consistency",
+        label: "Standardizing",
         text: "Proven design patterns give every feature the same shape, so the codebase stays predictable as it grows, and frontend and backend types never get out of sync.",
       },
       {
-        label: "Resilience",
+        label: "Recovering",
         text: "Nothing is lost when something fails. Records are saved first and marked as synced or failed, background jobs take on the slow work, and scheduled tasks pick up whatever was left behind.",
       },
       {
-        label: "Security",
+        label: "Securing",
         text: "Secrets stay on the server, each role sees only what it needs, and sign-in uses refresh-token rotation with reuse detection and Google OAuth.",
       },
       {
-        label: "Test",
+        label: "Testing",
         text: "Unit and integration tests in Pest, Vitest and Jest, with coverage tracked to find the gaps. Anything that breaks once gets a test, so new features never break what already works.",
       },
     ],
@@ -115,27 +119,59 @@ export const careerTabs: CareerTab[] = [
     label: "DevOps",
     steps: [
       {
-        label: "Images",
+        label: "Containerizing",
         text: "Lean, multi-stage Docker images with cached layers: small to ship and quick to rebuild.",
       },
       {
-        label: "Servers",
+        label: "Managing",
         text: "Comfortable working with Linux, Docker and SSH, from first setup to production.",
       },
       {
-        label: "Rollback",
+        label: "Versioning",
         text: "Every release is a versioned image, so a bad deploy goes back to any earlier version in one step.",
       },
       {
-        label: "Protect",
+        label: "Securing",
         text: "Servers are reachable only through a private network. Secrets never touch the code, and containers run read-only, as non-root and with only the permissions they need.",
       },
       {
-        label: "Serve",
+        label: "Serving",
         text: "Nginx compresses and caches files so pages load fast, and rate limits keep abuse out.",
       },
     ],
   },
-  { id: "stack", label: "Stack" },
-  { id: "ai", label: "AI" },
+  {
+    id: "stack",
+    label: "Stack",
+    steps: [
+      {
+        label: "Languages",
+        text: "TypeScript, JavaScript, PHP, SQL, HTML, CSS",
+      },
+      {
+        label: "Frontend",
+        text: "React, Next.js, Inertia.js, Tailwind CSS, shadcn/ui, TanStack Query & Table, GSAP, Motion",
+      },
+      {
+        label: "Backend",
+        text: "Laravel, NestJS, REST APIs, Prisma",
+      },
+      {
+        label: "Data",
+        text: "MySQL, PostgreSQL",
+      },
+      {
+        label: "Testing",
+        text: "Pest, Vitest, Jest",
+      },
+      {
+        label: "DevOps",
+        text: "Docker, GitHub Actions, Nginx, Tailscale, Linux, SSH",
+      },
+      {
+        label: "AI",
+        text: "Claude, Cursor, ChatGPT",
+      },
+    ],
+  },
 ];

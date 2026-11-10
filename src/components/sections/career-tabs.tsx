@@ -21,7 +21,7 @@ export default function CareerTabs() {
           <div
             role="tablist"
             aria-label="Career"
-            className="flex border-b border-border"
+            className="flex justify-between border-b border-border"
           >
             {tabs.map((tab) => {
               const selected = tab.id === activeId;
@@ -34,7 +34,7 @@ export default function CareerTabs() {
                   aria-selected={selected}
                   aria-controls={`panel-${tab.id}`}
                   onClick={() => setActiveId(tab.id)}
-                  className={`-mb-px cursor-pointer border-b px-2 py-3 sm:px-4 text-sm font-medium transition-colors duration-300 ease-calm sm:text-base ${
+                  className={`-mb-px cursor-pointer border-b px-2 py-3 sm:px-4 text-base font-medium transition-colors duration-300 ease-calm sm:text-lg ${
                     selected
                       ? "border-accent text-foreground"
                       : "border-transparent text-muted hover:text-foreground"
@@ -57,7 +57,7 @@ export default function CareerTabs() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: panelEase }}
-            className="max-w-2xl text-base leading-8 text-muted sm:text-lg"
+            className="mx-auto max-w-2xl text-lg leading-8 text-muted sm:text-xl sm:leading-9"
           >
             <CareerTabPanel tab={active} />
           </motion.div>

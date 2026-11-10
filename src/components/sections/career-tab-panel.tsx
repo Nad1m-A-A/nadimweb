@@ -14,14 +14,14 @@ export default function CareerTabPanel({ tab }: CareerTabPanelProps) {
       {tab.body && <p>{tab.body}</p>}
 
       {tab.steps && (
-        <dl className="divide-y divide-border border-y border-border">
+        <dl className="divide-y divide-border">
           {tab.steps.map((step) => (
             <div
               key={step.label}
-              className="grid gap-1 py-4 sm:grid-cols-[7rem_1fr] sm:gap-6"
+              className="grid gap-1 py-4 sm:grid-cols-[9rem_1fr] sm:gap-6"
             >
               <dt className="font-medium text-foreground">{step.label}</dt>
-              <dd className="text-base leading-7">{step.text}</dd>
+              <dd className="text-base leading-7 sm:text-lg sm:leading-8">{step.text}</dd>
             </div>
           ))}
         </dl>
@@ -30,7 +30,7 @@ export default function CareerTabPanel({ tab }: CareerTabPanelProps) {
       {tab.references && (
         <div className="space-y-2">
           <h3 className="text-sm text-muted">References</h3>
-          <ul className="flex flex-wrap gap-x-5 gap-y-1 text-sm sm:text-base">
+          <ul className="flex flex-wrap gap-x-5 gap-y-1 text-base sm:text-lg">
             {tab.references.map((reference) => (
               <li key={reference.url}>
                 <a

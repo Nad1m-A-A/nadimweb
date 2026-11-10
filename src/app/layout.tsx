@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Nadim Alaa",
   },
   description:
-    "Nadim Alaa, Fullstack Web Developer Specialized in ERP Development.",
+    "Nadim Alaa, Fullstack Web Developer Specialized in Enterprise Systems.",
 };
 
 export default function RootLayout({

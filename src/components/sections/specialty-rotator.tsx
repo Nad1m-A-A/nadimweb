@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap/register";
 
 const PHRASES = [
-  "ERP Systems",
+  "Enterprise Systems",
   "Modern UI Architectures",
   "Complex Web Applications",
 ] as const;
