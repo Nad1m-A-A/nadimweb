@@ -9,14 +9,20 @@ const panelEase = [0.22, 1, 0.36, 1] as const;
 type CareerTab = {
   id: string;
   label: string;
+  body?: string;
 };
 
 const tabs: CareerTab[] = [
-  { id: "overview", label: "Overview" },
+  {
+    id: "overview",
+    label: "Overview",
+    body: "Full Stack Developer with 4+ years of experience building ERP systems, internal dashboards and Arabic/English websites for UAE businesses, mainly with Laravel and React, and also Next.js and NestJS. I take projects from the first conversation with the client all the way to production: database design, APIs, right-to-left (RTL) interfaces, automated tests and Docker deploys. I care about applications that makes a better web",
+  },
   { id: "frontend", label: "Frontend" },
   { id: "backend", label: "Backend" },
   { id: "devops", label: "DevOps" },
   { id: "stack", label: "Stack" },
+  { id: "ai", label: "AI" },
 ];
 
 export default function CareerTabs() {
@@ -64,7 +70,7 @@ export default function CareerTabs() {
             transition={{ duration: 0.3, ease: panelEase }}
             className="max-w-2xl text-sm leading-7 text-muted sm:text-base"
           >
-            {active.label} content coming soon.
+            {active.body ?? `${active.label} content coming soon.`}
           </motion.div>
         </AnimatePresence>
       </div>
