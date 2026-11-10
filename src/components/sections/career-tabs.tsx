@@ -68,7 +68,7 @@ export default function CareerTabs() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: panelEase }}
-            className="max-w-2xl text-sm leading-7 text-muted sm:text-base"
+            className="max-w-2xl text-base leading-8 text-muted sm:text-lg"
           >
             {active.body ?? `${active.label} content coming soon.`}
           </motion.div>
