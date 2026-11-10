@@ -24,17 +24,16 @@ export function CareerHeader() {
       className="sticky top-0 z-50 border-b border-border bg-background"
     >
       <div className="flex h-16 items-center justify-between px-4 md:px-10">
-        <Link href="/career" aria-label="Nadim Alaa">
+        <Link
+          className="flex pt-2 flex-col items-center"
+          href="/"
+          aria-label="Nadim Alaa"
+        >
           <Image src={logo} alt="" className="h-8 w-auto" priority />
+          <div>Nadim Web</div>
         </Link>
 
         <nav className="flex items-center gap-6">
-          <Link
-            href="/"
-            className="text-muted transition-colors duration-300 ease-calm hover:text-foreground"
-          >
-            Home
-          </Link>
           {socialLinks.map(({ href, label, Icon }) => (
             <a
               key={label}
