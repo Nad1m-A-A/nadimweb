@@ -3,11 +3,6 @@ export type CareerStep = {
   text: string;
 };
 
-export type CareerReference = {
-  label: string;
-  url: string;
-};
-
 export type CareerMetric = {
   value: string;
   label: string;
@@ -20,7 +15,6 @@ export type CareerTab = {
   metrics?: CareerMetric[];
   layout?: "steps" | "chips";
   steps?: CareerStep[];
-  references?: CareerReference[];
 };
 
 export const defaultCareerTabId = "frontend";
@@ -70,23 +64,6 @@ export const careerTabs: CareerTab[] = [
         text: "Built to be found and trusted: SEO metadata, Open Graph, hreflang and structured data, with Vitest and Jest tests behind every release.",
       },
     ],
-    references: [
-      { label: "carnemedia.ae", url: "https://carnemedia.ae" },
-      { label: "codeten.net", url: "https://codeten.net" },
-      { label: "designerab.com", url: "https://www.designerab.com" },
-      {
-        label: "dashboards.nadimweb.com",
-        url: "https://dashboards.nadimweb.com/",
-      },
-      {
-        label: "cv.nadimweb.com",
-        url: "https://cv.nadimweb.com/",
-      },
-      {
-        label: "mhmcollection.pages.dev",
-        url: "https://mhmcollection.pages.dev/",
-      },
-    ],
   },
   {
     id: "backend",
@@ -115,17 +92,6 @@ export const careerTabs: CareerTab[] = [
       {
         label: "Testing",
         text: "Unit and integration tests in Pest, Vitest and Jest, with coverage tracked to find the gaps. Anything that breaks once gets a test, so new features never break what already works.",
-      },
-    ],
-    references: [
-      { label: "flowrigs.app", url: "https://flowrigs.app" },
-      {
-        label: "dashboards.nadimweb.com",
-        url: "https://dashboards.nadimweb.com/",
-      },
-      {
-        label: "gold.nadimweb.com",
-        url: "https://gold.nadimweb.com/",
       },
     ],
   },

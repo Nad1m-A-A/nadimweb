@@ -1,9 +1,10 @@
 import { LuArrowUpRight } from "react-icons/lu";
 import FadeIn from "@/components/ui/fade-in";
-import type { CareerReference } from "@/data/career-tabs";
+import type { Project } from "@/data/projects";
+import { host } from "@/lib/host";
 
 type CareerReferencesProps = {
-  references: CareerReference[];
+  references: Project[];
 };
 
 export default function CareerReferences({
@@ -11,7 +12,7 @@ export default function CareerReferences({
 }: CareerReferencesProps) {
   return (
     <FadeIn delay={0.3} className="space-y-3">
-      <p className="text-base text-muted">Live references</p>
+      {/* <p className="text-base text-muted">Live references</p> */}
       <ul className="grid grid-cols-3 gap-2">
         {references.map((reference) => (
           <li key={reference.url} className="min-w-0">
@@ -21,7 +22,7 @@ export default function CareerReferences({
               rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-2 rounded-[2px] bg-accent-shift px-3 py-2.5 text-base leading-normal text-white"
             >
-              <span className="min-w-0 truncate">{reference.label}</span>
+              <span className="min-w-0 truncate">{host(reference.url)}</span>
               <LuArrowUpRight aria-hidden className="size-3.5 shrink-0" />
             </a>
           </li>

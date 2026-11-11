@@ -6,73 +6,14 @@ import { AnimatePresence, motion } from "motion/react";
 import { LuChevronLeft, LuChevronRight, LuExternalLink, LuLoaderCircle } from "react-icons/lu";
 import FadeIn from "@/components/ui/fade-in";
 import SectionTitle from "@/components/ui/section-title";
+import { projects as allProjects } from "@/data/projects";
 
 const fadeEase = [0.22, 1, 0.36, 1] as const;
 const fadeDuration = 0.3;
 
-type Project = {
-    name: string;
-    highlights: string[] | null;
-    url: string | null;
-    repo: string | null;
-    image: string | null;
-    available: boolean;
-};
-
-const projects: Project[] = [
-    {
-        name: "Multi-Business Dashboard",
-        highlights: [
-            "Aggregates separate enterprise systems into one authenticated surface Using Inertia.js",
-            "Credentials and enterprise system URLs never reach the browser; all fetches go through an authorized server proxy",
-            "Role-based passcode auth with request auditing for non-admin roles",
-            "Layered permissions (views / actions / businesses) enforced on the API and mirrored in the UI",
-            "Same API contract in demo and production, with synthetic data swaps in without changing the frontend",
-            "Fully documented, with a bilingual user guide and in-app developer guide for contributors",
-        ],
-        url: "http://dashboards.nadimweb.com",
-        repo: "https://github.com/Nad1m-A-A/dashboards-demo",
-        image: "/dashboards-mockup.webp",
-        available: true,
-    },
-    {
-        name: "Jewelry Factory Enterprise System",
-        highlights: [
-            "End-to-end enterprise system for gold manufacturing with dedicated modules for inventory, HR, production, and order tracking",
-            "Minimizes mistakes by automating complex and repetitive workflows",
-            "Delivers precise material tracking and real-time metrics across all production stages",
-            "Seamless, secure in-app subscription payments and renewals"
-        ],
-        url: "https://gold.nadimweb.com",
-        repo: null,
-        image: "/erp-mockup.webp",
-        available: true,
-    },
-    {
-        name: "Carne Media",
-        highlights: [
-            "Next.js app with full Arabic/English localization and locale-aware routing",
-            "SEO-ready structure with metadata, crawlable pages, and bilingual content",
-            "Marketing site for programs, founder story, and journal — built for a Dubai media training brand",
-        ],
-        url: "https://carnemedia.ae/en",
-        repo: null,
-        image: "/carne-mockup.png",
-        available: true,
-    },
-    {
-        name: "CodeTen Software Solutions",
-        highlights: [
-            "React SPA with a multi-page marketing architecture for enterprise systems, healthcare, e-invoicing, and apps",
-            "Full Arabic/English bilingual experience across the site",
-            "Positions Code 10 as a UAE-local software house with solution and client storytelling",
-        ],
-        url: "https://codeten.net/en",
-        repo: null,
-        image: "/code10-mockup.webp",
-        available: true,
-    },
-];
+const projects = allProjects.filter((project) =>
+    project.features.includes("projects"),
+);
 
 export default function ProjectsSection() {
     const [active, setActive] = useState(0);
@@ -88,7 +29,7 @@ export default function ProjectsSection() {
         const next = projects[index];
         setActive(index);
 
-        if (!next.image) {
+        if (!next.mockup) {
             setIsImageLoading(false);
             setIsAnimating(false);
             return;
@@ -135,17 +76,17 @@ export default function ProjectsSection() {
                                         transition={{ duration: fadeDuration, ease: fadeEase }}
                                         className="absolute inset-0"
                                     >
-                                        {project.image ? (
+                                        {project.mockup ? (
                                             <Image
-                                                src={project.image}
-                                                alt={project.name}
+                                                src={project.mockup}
+                                                alt={project.title ?? project.name}
                                                 fill
                                                 sizes="500px"
                                                 onLoad={() => {
                                                     setIsImageLoading(false);
                                                     setIsAnimating(false);
                                                 }}
-                                                className={`object-cover${project.available ? "" : " opacity-30 blur-[6px]"}`}
+                                                className={`object-cover${project.available === false ? " opacity-30 blur-[6px]" : ""}`}
                                             />
                                         ) : null}
                                     </motion.div>
@@ -221,12 +162,12 @@ export default function ProjectsSection() {
                                                 rel="noopener noreferrer"
                                                 className="inline-flex items-center gap-2 transition-opacity hover:opacity-80"
                                             >
-                                                {project.name}
+                                                {project.title ?? project.name}
                                                 <LuExternalLink className="size-5 shrink-0" aria-hidden />
                                             </a>
                                         ) : (
                                             <span className="inline-flex items-center gap-2">
-                                                {project.name}
+                                                {project.title ?? project.name}
                                             </span>
                                         )
                                     }
