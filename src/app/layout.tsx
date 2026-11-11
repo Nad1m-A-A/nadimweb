@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { sansFont, serifFont } from "@/lib/fonts";
+import { NavTextureSwitcher } from "@/components/ui/nav-texture-switcher";
 
 export const metadata: Metadata = {
   title: {
@@ -18,7 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${sansFont.className} ${sansFont.variable} ${serifFont.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        {children}
+        <NavTextureSwitcher />
+      </body>
     </html>
   );
 }

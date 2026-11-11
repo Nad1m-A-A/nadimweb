@@ -30,6 +30,7 @@ export function SiteHeader({ links, contact = false }: SiteHeaderProps) {
       as="header"
       trigger="mount"
       duration={0.6}
+      data-site-header
       className="sticky top-0 z-50 border-b border-border bg-background"
     >
       <div className="flex flex-wrap items-center justify-between gap-x-6 px-4 md:grid md:h-16 md:grid-cols-[1fr_auto_1fr] md:px-10">
