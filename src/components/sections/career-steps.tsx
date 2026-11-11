@@ -16,7 +16,7 @@ export default function CareerSteps({ steps }: CareerStepsProps) {
           >
             <span
               aria-hidden
-              className="font-num text-3xl leading-none tabular-nums text-accent sm:text-4xl"
+              className="font-num text-3xl leading-none tabular-nums text-black sm:text-4xl"
             >
               {String(index + 1).padStart(2, "0")}
             </span>

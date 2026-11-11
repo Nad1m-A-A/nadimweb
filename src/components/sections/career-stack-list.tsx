@@ -18,7 +18,7 @@ export default function CareerStackList({ items }: CareerStackListProps) {
             delay={0.3 + Math.min(index, 4) * 0.05}
             className="grid items-start gap-3 py-5 sm:grid-cols-[8.5rem_1fr] sm:gap-6"
           >
-            <dt className="font-num text-xl leading-tight tracking-tight text-accent sm:text-2xl">
+            <dt className="font-num text-xl leading-tight tracking-tight text-black sm:text-2xl">
               {group.label}
             </dt>
             <dd className="flex flex-wrap items-baseline gap-x-4 gap-y-2 text-base leading-7 text-foreground sm:gap-x-5 sm:leading-8">

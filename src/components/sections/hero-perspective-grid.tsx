@@ -29,7 +29,7 @@ export function HeroPerspectiveGrid() {
       aria-hidden
     >
       <svg
-        className="absolute mt-1 inset-0 h-full w-full text-border"
+        className="absolute mt-1 inset-0 h-full w-full text-foreground/25"
         viewBox={`0 0 ${GRID_WIDTH} ${GRID_HEIGHT}`}
         preserveAspectRatio="none"
         fill="none"
