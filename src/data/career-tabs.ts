@@ -8,19 +8,34 @@ export type CareerReference = {
   url: string;
 };
 
+export type CareerMetric = {
+  value: string;
+  label: string;
+};
+
 export type CareerTab = {
   id: string;
   label: string;
   body?: string;
+  metrics?: CareerMetric[];
+  layout?: "steps" | "chips";
   steps?: CareerStep[];
   references?: CareerReference[];
 };
+
+export const defaultCareerTabId = "frontend";
 
 export const careerTabs: CareerTab[] = [
   {
     id: "overview",
     label: "Overview",
     body: "Product engineer with 4+ years of experience building enterprise systems, internal dashboards and multilingual marketing websites for UAE businesses, mainly with Laravel, React, and Next.js. I take projects from the first conversation with the client all the way to production: database design, APIs, UI/UX, automated tests and Docker deploys. I care about the quality of my software and aim to improve the web.",
+    metrics: [
+      { value: "4+", label: "years building" },
+      { value: "10+", label: "businesses served" },
+      { value: "500+", label: "dashboard users" },
+      { value: "-29%", label: "first-load JS" },
+    ],
   },
   {
     id: "frontend",
@@ -147,6 +162,7 @@ export const careerTabs: CareerTab[] = [
   {
     id: "stack",
     label: "Stack",
+    layout: "chips",
     steps: [
       {
         label: "Languages",

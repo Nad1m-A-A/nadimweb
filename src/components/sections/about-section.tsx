@@ -87,7 +87,7 @@ export default function AboutSection() {
             const buttonId = `about-button-${item.id}`;
 
             return (
-              <FadeIn key={item.id}>
+              <FadeIn key={item.id} delay={0.3 + index * 0.05}>
                 <h3>
                   <button
                     type="button"
@@ -102,10 +102,13 @@ export default function AboutSection() {
                         : "py-5"
                       }`}
                   >
-                    <span className="mt-0.5 font-mono text-sm font-semibold text-accent group-hover:opacity-70">
-                      Q
+                    <span
+                      aria-hidden
+                      className="w-8 shrink-0 font-num text-2xl leading-none text-accent group-hover:opacity-70"
+                    >
+                      {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="flex-1 text-base font-medium text-foreground sm:text-lg">
+                    <span className="flex-1 text-xl text-foreground sm:text-2xl">
                       {item.question}
                     </span>
                     <LuChevronRight
@@ -129,11 +132,11 @@ export default function AboutSection() {
                     >
                       <div className="pb-6">
                         {item.kind === "text" ? (
-                          <p className="max-w-2xl text-sm leading-7 text-muted sm:text-base">
+                          <p className="max-w-2xl pl-12 text-base leading-7 text-muted sm:text-lg sm:leading-8">
                             {item.body}
                           </p>
                         ) : (
-                          <ul className="grid gap-2.5 sm:grid-cols-2">
+                          <ul className="grid gap-2.5 pl-12 sm:grid-cols-2">
                             {item.items.map(({ Icon, title, body }) => (
                               <FadeIn
                                 key={title}
@@ -145,11 +148,11 @@ export default function AboutSection() {
                                       aria-hidden
                                       className="size-5 shrink-0 text-accent"
                                     />
-                                    <span className="text-sm font-semibold text-foreground">
+                                    <span className="text-base font-medium text-foreground">
                                       {title}
                                     </span>
                                   </div>
-                                  <p className="mt-2 text-sm leading-6 text-muted">
+                                  <p className="mt-2 text-base leading-7 text-muted">
                                     {body}
                                   </p>
                                 </li>

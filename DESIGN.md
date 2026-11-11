@@ -16,21 +16,32 @@ Tokens live in `src/app/globals.css`
 | `border` | `foreground` at 12% (`color-mix`) | All lines and dividers |
 
 - Text selection: accent at 35%.
+- `live` `#2e9e6b`: only for tiny "live" markers (career references). Never for text or fills.
 
 ## Type
 
-- One font: League Spartan (`src/lib/fonts.ts`), weights 400-700.
-- Section title (`SectionTitle`): `text-3xl sm:text-4xl font-semibold tracking-tight`, with a thin accent highlighter bar behind the text.
-- Item headings: `text-base sm:text-lg font-medium`; project names `text-xl sm:text-2xl font-semibold`.
-- Body: `text-sm sm:text-base leading-7 text-muted`, max width about `max-w-2xl`.
-- Labels: `text-sm text-muted`.
+Fonts live in `src/lib/fonts.ts`; `--font-sans`, `--font-serif` and `--font-num` are wired in `src/app/globals.css` (`@theme inline`). The root layout applies the sans on `html`.
+
+| Role | Font | Use |
+| --- | --- | --- |
+| Text | Instrument Sans (400-600) | Body, nav, labels, buttons, tech names, chips |
+| Headings | Instrument Serif (400) | `h1`, `h2`, `h3`, set globally in `globals.css` |
+| Numerals | Instrument Serif (`font-num`) | Large step and metric numbers, accent colour, `tabular-nums` |
+
+- Do not use monospace or `font-mono` anywhere.
+- Headings are serif at weight 400 with a global size bump (serif runs small): `h1` clamp 2.75-4.5rem, `h2` 2.5rem, `h3` 1.5rem. The rules are unlayered, so utility sizes and weights on headings are ignored.
+- Section title (`SectionTitle`): the `h2`, no bar.
+- Item headings: `h3`. Text next to numbers (about questions) is `text-xl sm:text-2xl`.
+- Body: `text-base sm:text-lg leading-7 sm:leading-8 text-muted`, max width about `max-w-2xl`; lead paragraphs `text-lg sm:text-xl`.
+- Labels: `text-base text-muted`.
 
 ## Layout
 
 - Section shell: `.section` (`py-20`, background) around `.app_container` (`mx-auto max-w-3xl px-6 md:px-0 space-y-10`).
 - Sections after the first get `.inner-section`: a centered 1px accent line at 30% opacity, 80% wide, on top.
 - Each section starts with a `SectionTitle`.
-- Sticky header: `h-16`, name on the left, links in the middle, icons and the Contact button on the right; bottom border.
+- One sticky header on every page (`SiteHeader`, `h-16`, bottom border): logo and "Nadim Web" side by side on the left, section links in the middle (`SiteNav`, active link follows scroll), GitHub, LinkedIn and Contact on the right. Pages only pass their links. On phones the links drop to a second row.
+- Section links are plain `#id` anchors with smooth scrolling. `.section` has a scroll margin (`--header-h`) so the section title lands just under the header. The last section is tall enough to reach that spot.
 
 ## Surfaces
 
@@ -52,3 +63,12 @@ Tokens live in `src/app/globals.css`
 
 - Minimal wording.
 - English only.
+
+## Career page
+
+Same look as home; only the content differs.
+
+- Sections instead of tabs: Overview, Frontend, Backend, DevOps, Stack, each a `.section` with a `SectionTitle`.
+- Hero uses the same perspective grid as home.
+- Steps are numbered rows with a large `font-num` number, divided by thin lines. Stack uses bordered chips. References are link pills with a small `live` marker.
+- Reveal order inside a section: title, then content with `delay` from 0.3s, staggered.

@@ -111,7 +111,7 @@ export default function ProjectsSection() {
             <div className="app_container">
                 <SectionTitle>Projects</SectionTitle>
 
-                <FadeIn className="mt-10 space-y-4">
+                <FadeIn delay={0.3} className="mt-10 space-y-4">
                     <div className="flex items-center gap-3">
                         <div className="max-w-125 w-full -ml-8">
                             <div className="relative aspect-3/2 w-full">
@@ -212,7 +212,7 @@ export default function ProjectsSection() {
                             className="space-y-4"
                         >
                             <FadeIn>
-                                <h3 className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl mt-10">
+                                <h3 className="text-foreground mt-10">
                                     {
                                         project.url ? (
                                             <a
@@ -238,7 +238,7 @@ export default function ProjectsSection() {
                                     {project.highlights.map((item) => (
                                         <FadeIn
                                             key={item}
-                                            className="leading-6 text-muted sm:text-base sm:leading-7"
+                                            className="text-base leading-7 text-muted sm:text-lg sm:leading-8"
                                         >
                                             <li>
                                                 {item}

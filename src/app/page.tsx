@@ -5,9 +5,16 @@ import ProjectsSection from "@/components/sections/projects-section";
 import InfoSection from "@/components/sections/info-section";
 import { SiteHeader } from "@/components/layout/site-header";
 
+const navLinks = [
+  { id: "about", label: "About" },
+  { id: "projects", label: "Projects" },
+  { id: "info", label: "Info" },
+];
+
 export default function Home() {
   return (
     <>
+      <SiteHeader links={navLinks} contact />
       <HeroSection />
       <HeroStackVisual />
 

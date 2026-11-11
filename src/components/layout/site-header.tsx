@@ -1,77 +1,75 @@
-"use client";
-
+import Image from "next/image";
 import Link from "next/link";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiteNav, type SiteNavLink } from "@/components/layout/site-nav";
 import FadeIn from "@/components/ui/fade-in";
-import { useActiveSection } from "@/hooks/useActiveSection.js";
-import { FaGithub } from "react-icons/fa";
+import { infoItems } from "@/data/info";
+import logo from "../../../dev-stamp/logo-black.png";
 
-const navLinks = [
-  { href: "#intro", label: "Intro" },
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#info", label: "Info" },
-] as const;
+const itemProp = (title: string, prop: "href") => {
+  const item = infoItems.find((entry) => entry.title === title);
+  return item && prop in item ? item[prop] : "";
+};
 
-const sectionHashes = navLinks.map((link) => link.href);
+const socialLinks = [
+  { href: itemProp("GitHub", "href"), label: "GitHub", Icon: FaGithub },
+  { href: itemProp("LinkedIn", "href"), label: "LinkedIn", Icon: FaLinkedin },
+];
 
-export function SiteHeader() {
-  const { activeHash, navigateToHash } = useActiveSection(sectionHashes);
+const contactHref = itemProp("Email", "href");
 
+type SiteHeaderProps = {
+  links: readonly SiteNavLink[];
+  /** Show the Contact button. */
+  contact?: boolean;
+};
+
+/** The one header for every page: logo lockup, section links, socials and an optional Contact button. */
+export function SiteHeader({ links, contact = false }: SiteHeaderProps) {
   return (
     <FadeIn
       as="header"
       trigger="mount"
       duration={0.6}
-      className="sticky top-0 z-50 border-b border-border bg-background shadow-[inset_0_0_100px_rgba(0,0,0,0.1),0_0_10px_rgba(0,0,0,0.1)]"
+      className="sticky top-0 z-50 border-b border-border bg-background"
     >
-      <div className="z-10 flex h-16 items-center justify-between px-4 md:px-10">
+      <div className="flex flex-wrap items-center justify-between gap-x-6 px-4 md:grid md:h-16 md:grid-cols-[1fr_auto_1fr] md:px-10">
         <Link
-          className="text-lg font-medium"
+          className="flex h-16 items-center gap-2.5 md:h-auto"
           href="/"
+          aria-label="Nadim Web, home"
         >
-          Nadim Alaa
+          <Image src={logo} alt="" className="h-8 w-auto" priority />
+          <span className="pt-1 text-lg font-semibold tracking-tight">
+            Nadim Web
+          </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link, index) => (
-            <FadeIn
-              key={link.href}
-              trigger="mount"
-              delay={0.1 + index * 0.08}
+        <div className="order-3 w-full pb-3 md:order-none md:w-auto md:pb-0">
+          <SiteNav links={links} />
+        </div>
+
+        <div className="flex items-center gap-6 md:justify-self-end">
+          {socialLinks.map(({ href, label, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={label}
+              className="hidden text-accent transition-opacity duration-300 ease-calm hover:opacity-70 sm:block"
             >
-              <a
-                href={link.href}
-                onClick={(event) => {
-                  event.preventDefault();
-                  navigateToHash(link.href);
-                }}
-                className={`border-b pb-1 px-1 transition-[color,border-color] hover:text-foreground ${activeHash === link.href
-                  ? "border-accent text-foreground"
-                  : "border-transparent text-muted"
-                  }`}
-              >
-                {link.label}
-              </a>
-            </FadeIn>
+              <Icon className="size-5" />
+            </a>
           ))}
-        </nav>
-
-        <div className="flex items-center gap-6">
-          {/* <ThemeToggle /> */}
-
-          <Link href="https://github.com/Nad1m-A-A" target="_blank">
-            <FaGithub
-              className="size-6"
-            />
-          </Link>
-          <button
-            onClick={() => {
-              window.open("mailto:nadim.alaa@hotmail.com", "_blank");
-            }}
-            className="leading-relaxed px-3 py-0.5 pt-1 bg-accent-shift cursor-pointer rounded-[2px]"
-          >
-            Contact
-          </button>
+          {contact && (
+            <a
+              href={contactHref}
+              className="rounded-[2px] bg-accent-shift px-3 py-0.5 pt-1 leading-relaxed text-white"
+            >
+              Contact
+            </a>
+          )}
         </div>
       </div>
     </FadeIn>

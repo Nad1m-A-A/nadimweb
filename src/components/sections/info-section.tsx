@@ -7,16 +7,19 @@ import { infoItems } from "@/data/info";
 
 export default function InfoSection() {
   return (
-    <section id="info" className="section inner-section">
-      <div className="app_container min-h-[46vh] flex flex-col justify-center">
+    <section
+      id="info"
+      className="section inner-section min-h-[calc(100vh-var(--header-h)+3.5rem)]"
+    >
+      <div className="app_container">
         <SectionTitle>Info</SectionTitle>
 
         <div className="relative">
           <dl className="relative z-10 grid grid-cols-1 gap-4 md:grid-cols-2">
-            {infoItems.map((item) => (
-              <FadeIn key={item.title}>
-                <dt className="text-sm text-muted">{item.title}</dt>
-                <dd className="mt-1 text-base text-foreground sm:text-lg">
+            {infoItems.map((item, index) => (
+              <FadeIn key={item.title} delay={0.3 + index * 0.05}>
+                <dt className="text-base text-muted">{item.title}</dt>
+                <dd className="mt-1 text-lg text-foreground sm:text-xl">
                   {"href" in item ? (
                     <a
                       href={item.href}

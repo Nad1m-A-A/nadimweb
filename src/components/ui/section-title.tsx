@@ -15,7 +15,7 @@ export default function SectionTitle({
   return (
     <FadeIn>
       <h2
-        className={`w-fit text-3xl font-semibold tracking-tight text-foreground sm:text-4xl bg-accent leading-3 pb-2 px-1 ${className}`}
+        className={`w-fit text-3xl font-semibold tracking-wide text-foreground sm:text-4xl leading-3 pb-2 px-1 ${className}`}
       >
         {children}
       </h2>

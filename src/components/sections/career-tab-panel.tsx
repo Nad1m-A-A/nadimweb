@@ -1,3 +1,9 @@
+import FadeIn from "@/components/ui/fade-in";
+import CareerMetrics from "@/components/sections/career-metrics";
+import CareerReferences from "@/components/sections/career-references";
+import CareerStackList from "@/components/sections/career-stack-list";
+import CareerSteps from "@/components/sections/career-steps";
+import SectionTitle from "@/components/ui/section-title";
 import type { CareerTab } from "@/data/career-tabs";
 
 type CareerTabPanelProps = {
@@ -5,47 +11,28 @@ type CareerTabPanelProps = {
 };
 
 export default function CareerTabPanel({ tab }: CareerTabPanelProps) {
-  if (!tab.body && !tab.steps) {
-    return <p>{tab.label} content coming soon.</p>;
-  }
-
   return (
-    <div className="space-y-8">
-      {tab.body && <p>{tab.body}</p>}
+    <>
+      <SectionTitle>{tab.label}</SectionTitle>
 
-      {tab.steps && (
-        <dl className="divide-y divide-border">
-          {tab.steps.map((step) => (
-            <div
-              key={step.label}
-              className="grid gap-1 py-4 sm:grid-cols-[9rem_1fr] sm:gap-6"
-            >
-              <dt className="font-medium text-foreground">{step.label}</dt>
-              <dd className="text-base leading-7 sm:text-lg sm:leading-8">{step.text}</dd>
-            </div>
-          ))}
-        </dl>
+      {tab.body && (
+        <FadeIn delay={0.3}>
+          <p className="max-w-2xl text-lg leading-8 text-muted sm:text-xl sm:leading-9">
+            {tab.body}
+          </p>
+        </FadeIn>
       )}
 
-      {tab.references && (
-        <div className="space-y-2">
-          <h3 className="text-sm text-muted">References</h3>
-          <ul className="flex flex-wrap gap-x-5 gap-y-1 text-base sm:text-lg">
-            {tab.references.map((reference) => (
-              <li key={reference.url}>
-                <a
-                  href={reference.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent transition-opacity duration-300 ease-calm hover:opacity-70"
-                >
-                  {reference.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
+      {tab.metrics && <CareerMetrics metrics={tab.metrics} />}
+
+      {tab.steps &&
+        (tab.layout === "chips" ? (
+          <CareerStackList items={tab.steps} />
+        ) : (
+          <CareerSteps steps={tab.steps} />
+        ))}
+
+      {tab.references && <CareerReferences references={tab.references} />}
+    </>
   );
 }
