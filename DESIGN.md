@@ -13,7 +13,7 @@ Tokens live in `src/app/globals.css`
 | `muted` | `#8a8278` | Secondary text, body copy under headings |
 | `surface` | `#f7f3eb` | Cards and soft fills (often `bg-surface/50`) |
 | `accent` | `#4274D9` | Buttons, title highlight, icons, active states |
-| `border` | `foreground` at 12% (`color-mix`) | All lines and dividers |
+| `border` | `foreground` at 12% in srgb mixed with `background` | All lines and dividers |
 
 - Text selection: accent at 35%.
 - `live` `#2e9e6b`: only for tiny "live" markers (career references). Never for text or fills.
@@ -37,8 +37,8 @@ Fonts live in `src/lib/fonts.ts`; `--font-sans`, `--font-serif` and `--font-num`
 
 ## Layout
 
-- Section shell: `.section` (`py-20`, background) around `.app_container` (`mx-auto max-w-3xl px-6 md:px-0 space-y-10`).
-- Sections after the first get `.inner-section`: a centered 1px accent line at 30% opacity, 80% wide, on top.
+- Section shell: `.section` (`py-20`, background) around `.app_container` (`mx-auto max-w-3xl px-6 md:px-0 space-y-8`).
+- Sections after the first get `.inner-section`: a 1px `border` line as wide as the content, on top.
 - Each section starts with a `SectionTitle`.
 - One sticky header on every page (`SiteHeader`, `h-16`, bottom border): logo and "Nadim Web" side by side on the left, section links in the middle (`SiteNav`, active link follows scroll), GitHub, LinkedIn and Contact on the right. Pages only pass their links. On phones the links drop to a second row.
 - Section links are plain `#id` anchors with smooth scrolling. `.section` has a scroll margin (`--header-h`) so the section title lands just under the header. The last section is tall enough to reach that spot.
@@ -70,5 +70,5 @@ Same look as home; only the content differs.
 
 - Sections instead of tabs: Overview, Frontend, Backend, DevOps, Stack, each a `.section` with a `SectionTitle`.
 - Hero uses the same perspective grid as home.
-- Steps are numbered rows with a large `font-num` number, divided by thin lines. Stack uses bordered chips. References are link pills with a small `live` marker.
+- Steps are numbered rows with a large `font-num` number, divided by thin lines. Stack rows pair an uppercase label with names separated by muted serif slashes. References are link pills with a small `live` marker.
 - Reveal order inside a section: title, then content with `delay` from 0.3s, staggered.

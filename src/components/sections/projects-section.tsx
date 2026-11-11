@@ -111,7 +111,7 @@ export default function ProjectsSection() {
             <div className="app_container">
                 <SectionTitle>Projects</SectionTitle>
 
-                <FadeIn delay={0.3} className="mt-10 space-y-4">
+                <FadeIn delay={0.3} className="mt-8 space-y-4">
                     <div className="flex items-center gap-3">
                         <div className="max-w-125 w-full -ml-8">
                             <div className="relative aspect-3/2 w-full">

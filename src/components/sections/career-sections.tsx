@@ -5,12 +5,7 @@ export default function CareerSections() {
   return (
     <>
       {careerTabs.map((tab, index) => (
-        <CareerSection
-          key={tab.id}
-          tab={tab}
-          divided={index > 0}
-          last={index === careerTabs.length - 1}
-        />
+        <CareerSection key={tab.id} tab={tab} divided={index > 0} />
       ))}
     </>
   );
