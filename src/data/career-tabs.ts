@@ -34,7 +34,7 @@ export const careerTabs: CareerTab[] = [
       { value: "4+", label: "years building" },
       { value: "10+", label: "businesses served" },
       { value: "500+", label: "dashboard users" },
-      { value: "-29%", label: "first-load JS" },
+      { value: "~29%", label: "lighter bundle" },
     ],
   },
   {

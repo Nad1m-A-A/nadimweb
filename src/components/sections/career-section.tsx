@@ -14,7 +14,7 @@ export default function CareerSection({
   return (
     <section
       id={tab.id}
-      className={`section ${divided ? "inner-section" : ""}`}
+      className={`section  ${divided ? "inner-section" : ""}`}
     >
       <div className="app_container">
         <CareerTabPanel tab={tab} />
