@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiteNav, type SiteNavLink } from "@/components/layout/site-nav";
@@ -25,21 +28,37 @@ type SiteHeaderProps = {
 
 /** The one header for every page: logo lockup, section links, socials and an optional Contact button. */
 export function SiteHeader({ links, contact = false }: SiteHeaderProps) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 8);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
+
   return (
     <FadeIn
       as="header"
       trigger="mount"
       duration={0.6}
       data-site-header
-      className="sticky top-0 z-50 border-b border-border bg-background"
+      data-scrolled={scrolled ? "" : undefined}
+      className={`sticky top-0 z-50 border-b transition-[background-color,border-color] duration-300 ${
+        scrolled ? "border-border bg-background" : "border-transparent bg-transparent"
+      }`}
     >
-      <div className="flex flex-wrap items-center justify-between gap-x-6 px-4 md:grid md:h-16 md:grid-cols-[1fr_auto_1fr] md:px-10">
+      <div
+        className={`flex flex-wrap items-center justify-between gap-x-6 transition-[padding] duration-300 md:grid md:h-16 md:grid-cols-[1fr_auto_1fr] ${
+          scrolled ? "px-4 md:px-10" : "px-8 md:px-24"
+        }`}
+      >
         <Link
-          className="flex h-16 items-center md:h-auto"
+          className="flex h-16 items-center md:h-auto w-fit"
           href="/"
           aria-label="Nadim Web, home"
         >
-          <LogoWordmark className="h-7 w-auto text-foreground" />
+          <LogoWordmark className="h-6 w-auto text-foreground" />
         </Link>
 
         <div className="order-3 w-full pb-3 md:order-none md:w-auto md:pb-0">
@@ -62,7 +81,7 @@ export function SiteHeader({ links, contact = false }: SiteHeaderProps) {
           {contact && (
             <a
               href={contactHref}
-              className="rounded-[2px] bg-accent-shift px-3 py-0.5 pt-1 leading-relaxed text-white"
+              className="rounded-[2px] bg-accent-shift px-3 py-1 text-label font-medium text-white"
             >
               Contact
             </a>

@@ -179,7 +179,7 @@ export default function ProjectsSection() {
                                     {project.highlights.map((item) => (
                                         <FadeIn
                                             key={item}
-                                            className="text-base leading-7 text-muted sm:text-lg sm:leading-8"
+                                            className="text-body text-muted"
                                         >
                                             <li>
                                                 {item}
@@ -195,7 +195,7 @@ export default function ProjectsSection() {
                                         href={project.repo}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-block cursor-pointer rounded-[2px] bg-accent-shift px-3 py-2 pt-2.5 leading-relaxed"
+                                        className="inline-block cursor-pointer rounded-[2px] bg-accent-shift px-3 py-1.5 text-label font-medium"
                                     >
                                         View on GitHub
                                     </a>

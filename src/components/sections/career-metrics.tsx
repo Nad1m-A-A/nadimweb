@@ -14,10 +14,10 @@ export default function CareerMetrics({ metrics }: CareerMetricsProps) {
           delay={0.3 + index * 0.06}
           className="w-1/2 px-2 sm:w-auto"
         >
-          <dd className="font-num text-3xl tracking-tight tabular-nums text-black sm:text-4xl">
+          <dd className="font-num text-numeral tracking-tight tabular-nums text-foreground">
             {metric.value}
           </dd>
-          <dt className="mt-1 text-base text-muted">{metric.label}</dt>
+          <dt className="mt-1 text-label text-muted">{metric.label}</dt>
         </FadeIn>
       ))}
     </dl>

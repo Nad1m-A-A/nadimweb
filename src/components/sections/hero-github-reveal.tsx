@@ -162,7 +162,7 @@ export function HeroGithubReveal({ children, stack }: HeroGithubRevealProps) {
 
               <span aria-hidden className="absolute inset-0 bg-black/70" />
               <span className="absolute inset-0 z-10 flex items-center justify-center">
-                <span className="bg-accent-shift px-10 py-2 text-base font-medium tracking-wide text-white sm:text-lg">
+                <span className="bg-accent-shift px-6 py-1.5 text-label font-medium text-white">
                   View Projects
                 </span>
               </span>

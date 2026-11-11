@@ -17,8 +17,12 @@ for (let i = 0; i < 80; i++) {
   horizontalLines.push(y);
 }
 
-const fadeMask = [
-  "linear-gradient(to top, black 30%, transparent 90%)",
+// Top fade applies across the full width.
+const topFade = "linear-gradient(to top, black 50%, transparent 95%)";
+
+// Side fade only on the upper part; the bottom band stays clear to the edges.
+const sideFade = [
+  "linear-gradient(to top, black 40%, transparent 55%)",
   "linear-gradient(to right, transparent 0%, black 14%, black 86%, transparent 100%)",
 ].join(", ");
 
@@ -26,6 +30,7 @@ export function HeroPerspectiveGrid() {
   return (
     <div
       className="pointer-events-none absolute inset-0 overflow-hidden"
+      style={{ WebkitMaskImage: topFade, maskImage: topFade }}
       aria-hidden
     >
       <svg
@@ -34,10 +39,10 @@ export function HeroPerspectiveGrid() {
         preserveAspectRatio="none"
         fill="none"
         style={{
-          WebkitMaskImage: fadeMask,
-          maskImage: fadeMask,
-          WebkitMaskComposite: "source-in",
-          maskComposite: "intersect",
+          WebkitMaskImage: sideFade,
+          maskImage: sideFade,
+          WebkitMaskComposite: "source-over",
+          maskComposite: "add",
         }}
       >
         <g stroke="currentColor" strokeWidth={0.5}>

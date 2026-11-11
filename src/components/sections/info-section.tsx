@@ -18,8 +18,8 @@ export default function InfoSection() {
           <dl className="relative z-10 grid grid-cols-1 gap-4 md:grid-cols-2">
             {infoItems.map((item, index) => (
               <FadeIn key={item.title} delay={0.3 + index * 0.05}>
-                <dt className="text-base text-muted">{item.title}</dt>
-                <dd className="mt-1 text-lg text-foreground sm:text-xl">
+                <dt className="text-label text-muted">{item.title}</dt>
+                <dd className="mt-1 text-lead text-foreground">
                   {"href" in item ? (
                     <a
                       href={item.href}

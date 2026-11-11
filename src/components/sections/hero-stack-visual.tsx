@@ -13,7 +13,7 @@ export function HeroStackVisual() {
             <FadeIn trigger="mount" delay={index * 0.1} className="flex items-center justify-center gap-2">
               <Logo color="currentColor" className="size-6 shrink-0 sm:size-7" />
               <span className="sr-only">{label}</span>
-              <span className="text-xs font-medium tracking-tight text-foreground/85 sm:text-sm">
+              <span className="text-label font-medium text-foreground">
                 {label}
               </span>
             </FadeIn>

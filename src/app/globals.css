@@ -3,12 +3,16 @@
 :root {
   --background: #fffdf8;
   --foreground: #3d3929;
-  --muted: #8a8278;
+  --muted: #6f685e;
   --surface: #f7f3eb;
   --accent: #4274D9;
   --live: #2e9e6b;
   --border: color-mix(in srgb, var(--foreground) 12%, var(--background));
   --header-h: 4rem;
+  /* Grain flood + hero wash strength (keep SVG flood-opacity in sync) */
+  --grain-strength: 7%;
+  --grain-wash: color-mix(in oklab, var(--accent) var(--grain-strength), var(--background));
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch' result='turbulence'/%3E%3CfeColorMatrix in='turbulence' type='luminanceToAlpha' result='alpha'/%3E%3CfeFlood flood-color='%234274D9' flood-opacity='0.07' result='blue'/%3E%3CfeComposite in='blue' in2='alpha' operator='in'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @media (max-width: 767px) {
@@ -24,7 +28,7 @@
   --color-surface: var(--surface);
   --color-accent: var(--accent);
   --color-live: var(--live);
-  --font-sans: var(--font-instrument-sans), system-ui, sans-serif;
+  --font-sans: var(--font-geist), system-ui, sans-serif;
   --font-serif: var(--font-instrument-serif), Georgia, serif;
   --font-num: var(--font-serif);
   --color-border: var(--border);
@@ -47,8 +51,29 @@ img {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--accent) 35%, transparent);
-  color: var(--foreground);
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Type scale: the only text sizes besides h1/h2/h3. See DESIGN.md "Type". */
+@utility text-numeral {
+  @apply text-3xl leading-none sm:text-4xl;
+}
+
+@utility text-heading {
+  @apply text-xl leading-snug sm:text-2xl;
+}
+
+@utility text-lead {
+  @apply text-lg leading-7 sm:text-xl sm:leading-8;
+}
+
+@utility text-body {
+  @apply text-[0.9375rem] leading-7 sm:text-base sm:leading-7;
+}
+
+@utility text-label {
+  @apply text-sm leading-6;
 }
 
 @layer utilities {
@@ -104,11 +129,11 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  font-size: clamp(2.5rem, 5.5vw, 3.75rem);
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
 }
 
 h3 {
@@ -116,33 +141,19 @@ h3 {
   line-height: 1.2;
 }
 
-/* Texture preview for the header and every .section (the hero has no .section): <html data-nav-texture> is set by NavTextureSwitcher */
-:root {
-  /* Warm tan ink for textures, matches --grain's tint */
-  --texture-ink: #b8905e;
-  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.72 0 0 0 0 0.55 0 0 0 0 0.32 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-[data-nav-texture="grain"] :is([data-site-header], .section),
-[data-nav-texture="glass"] .section {
+:is([data-site-header], .section) {
   background-image: var(--grain);
 }
 
-[data-nav-texture="dots"] :is([data-site-header], .section) {
-  background-image: radial-gradient(color-mix(in oklab, var(--texture-ink) 45%, transparent) 0.75px, transparent 1.25px);
-  background-size: 10px 10px;
+/* Header is bare until the page scrolls */
+[data-site-header]:not([data-scrolled]) {
+  background-image: none;
 }
 
-[data-nav-texture="lines"] :is([data-site-header], .section) {
-  background-image: repeating-linear-gradient(135deg, color-mix(in oklab, var(--texture-ink) 22%, transparent) 0 1px, transparent 1px 7px);
-}
-
-/* Glass: see-through blurred header; sections just get the grain */
-[data-nav-texture="glass"] [data-site-header] {
-  background-color: color-mix(in oklab, var(--background) 72%, transparent);
-  background-image: var(--grain);
-  -webkit-backdrop-filter: blur(14px) saturate(1.3);
-  backdrop-filter: blur(14px) saturate(1.3);
+/* Same blue as grain flood, no texture */
+[data-site-hero] {
+  background-color: var(--grain-wash);
+  background-image: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -104,11 +104,11 @@ export default function AboutSection() {
                   >
                     <span
                       aria-hidden
-                      className="w-8 shrink-0 font-num text-2xl leading-none text-accent group-hover:opacity-70"
+                      className="w-8 shrink-0 font-num text-heading text-accent group-hover:opacity-70"
                     >
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="flex-1 text-xl text-foreground sm:text-2xl">
+                    <span className="flex-1 text-heading text-foreground">
                       {item.question}
                     </span>
                     <LuChevronRight
@@ -132,7 +132,7 @@ export default function AboutSection() {
                     >
                       <div className="pb-6">
                         {item.kind === "text" ? (
-                          <p className="max-w-2xl pl-12 text-base leading-7 text-muted sm:text-lg sm:leading-8">
+                          <p className="max-w-2xl pl-12 text-body text-muted">
                             {item.body}
                           </p>
                         ) : (
@@ -152,7 +152,7 @@ export default function AboutSection() {
                                       {title}
                                     </span>
                                   </div>
-                                  <p className="mt-2 text-base leading-7 text-muted">
+                                  <p className="mt-2 text-body text-muted">
                                     {body}
                                   </p>
                                 </li>

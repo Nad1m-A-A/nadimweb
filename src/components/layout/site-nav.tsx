@@ -27,11 +27,10 @@ export function SiteNav({ links }: SiteNavProps) {
             <a
               href={`#${link.id}`}
               aria-current={selected ? "true" : undefined}
-              className={`block border-b px-1 pb-1 transition-[color,border-color] hover:text-foreground ${
-                selected
-                  ? "border-accent text-foreground"
+              className={`block border-b px-1 pb-1 text-label transition-[color,border-color] hover:text-foreground ${selected
+                  ? "border-accent text-blue-500"
                   : "border-transparent text-muted"
-              }`}
+                }`}
             >
               {link.label}
             </a>

@@ -20,9 +20,9 @@ export default function CareerReferences({
               href={reference.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-2 rounded-[2px] bg-accent-shift px-3 py-2.5 text-base leading-normal text-white"
+              className="flex w-full items-center justify-center gap-2 rounded-[2px] bg-accent-shift px-3 py-1.5 text-label font-medium text-white"
             >
-              <span className="min-w-0 truncate">{host(reference.url)}</span>
+              <span className="min-w-0 max-w-[9.5rem] truncate">{host(reference.url)}</span>
               <LuArrowUpRight aria-hidden className="size-3.5 shrink-0" />
             </a>
           </li>

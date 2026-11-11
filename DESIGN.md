@@ -10,12 +10,12 @@ Tokens live in `src/app/globals.css`
 | --- | --- | --- |
 | `background` | `#fffdf8` | Page background |
 | `foreground` | `#3d3929` | Main text |
-| `muted` | `#8a8278` | Secondary text, body copy under headings |
+| `muted` | `#6f685e` | Secondary text, body copy under headings |
 | `surface` | `#f7f3eb` | Cards and soft fills (often `bg-surface/50`) |
 | `accent` | `#4274D9` | Buttons, title highlight, icons, active states |
 | `border` | `foreground` at 12% in srgb mixed with `background` | All lines and dividers |
 
-- Text selection: accent at 35%.
+- Text selection: solid accent background, white text.
 - `live` `#2e9e6b`: only for tiny "live" markers (career references). Never for text or fills.
 
 ## Type
@@ -24,16 +24,34 @@ Fonts live in `src/lib/fonts.ts`; `--font-sans`, `--font-serif` and `--font-num`
 
 | Role | Font | Use |
 | --- | --- | --- |
-| Text | Instrument Sans (400-600) | Body, nav, labels, buttons, tech names, chips |
+| Text | Geist (300 default, 500 for emphasis) | Body, nav, labels, buttons, tech names, chips |
 | Headings | Instrument Serif (400) | `h1`, `h2`, `h3`, set globally in `globals.css` |
-| Numerals | Instrument Serif (`font-num`) | Large step and metric numbers, accent colour, `tabular-nums` |
+| Numerals | Instrument Serif (`font-num`) | Large step and metric numbers, `tabular-nums` |
 
 - Do not use monospace or `font-mono` anywhere.
-- Headings are serif at weight 400 with a global size bump (serif runs small): `h1` clamp 2.75-4.5rem, `h2` 2.5rem, `h3` 1.5rem. The rules are unlayered, so utility sizes and weights on headings are ignored.
-- Section title (`SectionTitle`): the `h2`, no bar.
-- Item headings: `h3`. Text next to numbers (about questions) is `text-xl sm:text-2xl`.
-- Body: `text-base sm:text-lg leading-7 sm:leading-8 text-muted`, max width about `max-w-2xl`; lead paragraphs `text-lg sm:text-xl`.
-- Labels: `text-base text-muted`.
+
+### Scale
+
+These are the only text sizes. Never use raw `text-xs`…`text-4xl` or `text-[…]` on text; pick a role. Each role sets size and line height for both breakpoints.
+
+| Role | Class | Size (mobile → sm) | Use |
+| --- | --- | --- | --- |
+| Display | `h1` (global) | clamp 2.5-3.75rem | Hero title |
+| Title | `h2` (global) | 2.25rem | `SectionTitle` |
+| Item | `h3` (global) | 1.5rem | Project, step names |
+| Numeral | `text-numeral` | 30 → 36px | Metric numbers |
+| Heading | `text-heading` | 20 → 24px | Sans item headings (about questions, their numbers), stack labels |
+| Lead | `text-lead` | 18 → 20px | Hero subtitle + rotator, intro paragraphs, info values |
+| Body | `text-body` | 15 → 16px | Paragraphs, `text-muted`, max `max-w-2xl` |
+| Label | `text-label` | 14px | Nav, `dt` labels, metric captions, chips |
+
+- `h1`/`h2`/`h3` rules are unlayered: utility sizes, weights and tracking on them are ignored, so don't add any.
+- Buttons: `text-label font-medium`, `px-3 py-1.5` (`py-1` in the header).
+
+### Colour and weight
+
+- Text has two colours: `text-foreground` and `text-muted`. Accent only for highlights, numbers in lists, links. No `text-black`, no `text-foreground/xx` or opacity on text (opacity is for hover/disabled states).
+- Weights: sans is 300 (`font-light` on `html`); `font-medium` (500) only for buttons, chips and small sub-headings. No `font-thin`, `font-semibold`, `font-bold`.
 
 ## Layout
 
@@ -48,7 +66,7 @@ Fonts live in `src/lib/fonts.ts`; `--font-sans`, `--font-serif` and `--font-num`
 - Thin borders, not shadows: 1px `border-border` for grids, list rows (`divide-y`) and cards.
 - Radius: 2px everywhere (`rounded-[2px]`).
 - Hover on cards: border shifts to `accent/40`.
-- Primary button: accent fill with the moving-gradient hover (`.bg-accent-shift`), white or foreground text, `px-3 py-2`, 2px radius.
+- Primary button: accent fill with the moving-gradient hover (`.bg-accent-shift`), white text, `text-label font-medium px-3 py-1.5`, 2px radius.
 - Icons: `react-icons`, Lucide set (`react-icons/lu`) for UI, `si`/`fa` for brand logos; usually `text-accent`, hover `opacity-70`.
 
 ## Motion
@@ -70,5 +88,5 @@ Same look as home; only the content differs.
 
 - Sections instead of tabs: Overview, Frontend, Backend, DevOps, Stack, each a `.section` with a `SectionTitle`.
 - Hero uses the same perspective grid as home.
-- Steps are numbered rows with a large `font-num` number, divided by thin lines. Stack rows pair an uppercase label with names separated by muted serif slashes. References are link pills with a small `live` marker.
+- Steps are rows divided by thin lines; the `h3` reads `01 / Label`: accent `font-num` number, muted serif slash, label, all at `h3` size. Stack rows pair an uppercase label with names separated by muted serif slashes. References are link pills with a small `live` marker.
 - Reveal order inside a section: title, then content with `delay` from 0.3s, staggered.
