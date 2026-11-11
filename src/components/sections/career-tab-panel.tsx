@@ -22,7 +22,7 @@ export default function CareerTabPanel({ tab }: CareerTabPanelProps) {
 
       {tab.body && (
         <FadeIn delay={0.3}>
-          <p className="text-lead text-muted">
+          <p className="text-body text-justify text-muted">
             {tab.body}
           </p>
         </FadeIn>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { sansFont, serifFont } from "@/lib/fonts";
 export const metadata: Metadata = {
   title: {
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en" className={`${sansFont.className} ${sansFont.variable} ${serifFont.variable} h-full font-light antialiased`}>
       <body className="flex min-h-full flex-col">
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );

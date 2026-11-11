@@ -14,7 +14,7 @@ export default function CareerMetrics({ metrics }: CareerMetricsProps) {
           delay={0.3 + index * 0.06}
           className="w-1/2 px-2 sm:w-auto"
         >
-          <dd className="font-num text-numeral tracking-tight tabular-nums text-foreground">
+          <dd className="font-num font-normal text-numeral tracking-tight tabular-nums text-foreground text-center">
             {metric.value}
           </dd>
           <dt className="mt-1 text-label text-muted">{metric.label}</dt>
