@@ -7,12 +7,12 @@ type CareerMetricsProps = {
 
 export default function CareerMetrics({ metrics }: CareerMetricsProps) {
   return (
-    <dl className="grid grid-cols-2 gap-y-8 sm:grid-cols-4">
+    <dl className="flex flex-wrap justify-between gap-y-8">
       {metrics.map((metric, index) => (
         <FadeIn
           key={metric.label}
           delay={0.3 + index * 0.06}
-          className="border-l border-border pl-4"
+          className="w-1/2 px-2 sm:w-auto"
         >
           <dd className="font-num text-3xl tracking-tight tabular-nums text-accent sm:text-4xl">
             {metric.value}

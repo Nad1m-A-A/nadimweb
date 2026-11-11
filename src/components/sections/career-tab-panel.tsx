@@ -17,7 +17,7 @@ export default function CareerTabPanel({ tab }: CareerTabPanelProps) {
 
       {tab.body && (
         <FadeIn delay={0.3}>
-          <p className="max-w-2xl text-lg leading-8 text-muted sm:text-xl sm:leading-9">
+          <p className="text-lg leading-8 text-muted sm:text-xl sm:leading-9">
             {tab.body}
           </p>
         </FadeIn>

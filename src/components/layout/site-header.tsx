@@ -1,10 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiteNav, type SiteNavLink } from "@/components/layout/site-nav";
+import { LogoWordmark } from "@/components/icons/logo-wordmark";
 import FadeIn from "@/components/ui/fade-in";
 import { infoItems } from "@/data/info";
-import logo from "../../../dev-stamp/logo-black.png";
 
 const itemProp = (title: string, prop: "href") => {
   const item = infoItems.find((entry) => entry.title === title);
@@ -35,14 +34,11 @@ export function SiteHeader({ links, contact = false }: SiteHeaderProps) {
     >
       <div className="flex flex-wrap items-center justify-between gap-x-6 px-4 md:grid md:h-16 md:grid-cols-[1fr_auto_1fr] md:px-10">
         <Link
-          className="flex h-16 items-center gap-2.5 md:h-auto"
+          className="flex h-16 items-center md:h-auto"
           href="/"
           aria-label="Nadim Web, home"
         >
-          <Image src={logo} alt="" className="h-8 w-auto" priority />
-          <span className="pt-1 text-lg font-semibold tracking-tight">
-            Nadim Web
-          </span>
+          <LogoWordmark className="h-7 w-auto text-foreground" />
         </Link>
 
         <div className="order-3 w-full pb-3 md:order-none md:w-auto md:pb-0">
