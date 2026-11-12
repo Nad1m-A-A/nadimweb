@@ -1,13 +1,13 @@
 import Section from "@/components/shared/ui/section";
-import CareerReferences from "@/components/career/career-references";
-import CareerSteps from "@/components/career/career-steps";
-import { backend, referencesFor } from "@/data/career-sections";
+import References from "@/components/career/references";
+import Concerns from "@/components/career/concerns";
+import { backend, referencesFor } from "@/data/career";
 
 export default function Backend() {
   return (
     <Section id={backend.id} label={backend.label}>
-      <CareerSteps steps={backend.steps} />
-      <CareerReferences references={referencesFor("backend")} />
+      <Concerns concerns={backend.concerns} />
+      <References references={referencesFor("backend")} />
     </Section>
   );
 }

@@ -1,8 +1,8 @@
 import Section from "@/components/shared/ui/section";
-import CareerMetrics from "@/components/career/career-metrics";
-import CareerReferences from "@/components/career/career-references";
+import Metrics from "@/components/career/metrics";
+import References from "@/components/career/references";
 import FadeIn from "@/components/shared/ui/fade-in";
-import { overview, referencesFor } from "@/data/career-sections";
+import { overview, referencesFor } from "@/data/career";
 
 export default function Overview() {
   return (
@@ -10,8 +10,8 @@ export default function Overview() {
       <FadeIn delay={0.3}>
         <p className="text_body text-justify text-muted">{overview.body}</p>
       </FadeIn>
-      <CareerMetrics metrics={overview.metrics} />
-      <CareerReferences references={referencesFor("overview")} />
+      <Metrics metrics={overview.metrics} />
+      <References references={referencesFor("overview")} />
     </Section>
   );
 }

@@ -1,11 +1,11 @@
 import { LuArrowUpRight } from "react-icons/lu";
 import FadeIn from "@/components/shared/ui/fade-in";
 import { host } from "@/lib/host";
-import type { CareerReferencesProps } from "@/types/career";
+import type { ReferencesProps } from "@/types/career";
 
-export default function CareerReferences({
+export default function References({
   references,
-}: CareerReferencesProps) {
+}: ReferencesProps) {
   return (
     <FadeIn delay={0.3} className="space-y-3">
       <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">

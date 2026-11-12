@@ -1,4 +1,4 @@
-import { careerSections } from "@/data/career-sections";
+import { careerSections } from "@/data/career";
 import type { SiteNavLink } from "@/types/nav";
 
 export const homeNavLinks: SiteNavLink[] = [

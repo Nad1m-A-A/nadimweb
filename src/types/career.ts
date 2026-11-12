@@ -1,6 +1,6 @@
 import type { Project } from "@/types/project";
 
-export type CareerStep = {
+export type Concern = {
   label: string;
   text: string;
 };
@@ -15,18 +15,14 @@ export type StackGroup = {
   items: string[];
 };
 
-export type CareerMetricsProps = {
+export type MetricsProps = {
   metrics: CareerMetric[];
 };
 
-export type CareerReferencesProps = {
+export type ReferencesProps = {
   references: Project[];
 };
 
-export type CareerStepsProps = {
-  steps: CareerStep[];
-};
-
-export type CareerStackListProps = {
-  groups: StackGroup[];
+export type ConcernsProps = {
+  concerns: Concern[];
 };

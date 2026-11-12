@@ -20,7 +20,7 @@ export const overview = {
 export const frontend = {
   id: "frontend",
   label: "Frontend",
-  steps: [
+  concerns: [
     {
       label: "Discovering",
       text: "Before a single line of code, I learn how the business really runs: who it serves, how it sells, and where things slow down.",
@@ -55,7 +55,7 @@ export const frontend = {
 export const backend = {
   id: "backend",
   label: "Backend",
-  steps: [
+  concerns: [
     {
       label: "Modeling",
       text: "I shape the database around how the business really works: its records, workflows, roles and people, in MySQL or PostgreSQL.",
@@ -86,7 +86,7 @@ export const backend = {
 export const devops = {
   id: "devops",
   label: "DevOps",
-  steps: [
+  concerns: [
     {
       label: "Containerizing",
       text: "Lean, multi-stage Docker images with cached layers: small to ship and quick to rebuild.",

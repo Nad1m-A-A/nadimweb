@@ -1,11 +1,11 @@
 import FadeIn from "@/components/shared/ui/fade-in";
-import type { CareerStepsProps } from "@/types/career";
+import type { ConcernsProps } from "@/types/career";
 
-export default function CareerSteps({ steps }: CareerStepsProps) {
+export default function Concerns({ concerns }: ConcernsProps) {
   return (
     <ol className="divide-y divide-border">
-      {steps.map((step, index) => (
-        <li key={step.label} className="py-6 first:pt-0">
+      {concerns.map((concern, index) => (
+        <li key={concern.label} className="py-6 first:pt-0">
           <FadeIn
             delay={0.3 + Math.min(index, 4) * 0.05}
           >
@@ -16,10 +16,10 @@ export default function CareerSteps({ steps }: CareerStepsProps) {
               <span aria-hidden className="text-muted/60">
                 /
               </span>
-              <span>{step.label}</span>
+              <span>{concern.label}</span>
             </h3>
             <p className="mt-2 max-w-2xl text_body text-muted">
-              {step.text}
+              {concern.text}
             </p>
           </FadeIn>
         </li>

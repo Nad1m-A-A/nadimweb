@@ -1,7 +1,7 @@
 import FadeIn from "@/components/shared/ui/fade-in";
-import type { CareerMetricsProps } from "@/types/career";
+import type { MetricsProps } from "@/types/career";
 
-export default function CareerMetrics({ metrics }: CareerMetricsProps) {
+export default function Metrics({ metrics }: MetricsProps) {
   return (
     <dl className="flex flex-wrap justify-between gap-y-8">
       {metrics.map((metric, index) => (

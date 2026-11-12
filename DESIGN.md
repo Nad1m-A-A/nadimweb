@@ -26,7 +26,7 @@ Fonts live in `src/lib/fonts.ts`; `--font-sans`, `--font-serif` and `--font-num`
 | --- | --- | --- |
 | Text | Geist (300 default, 500 for emphasis) | Body, nav, labels, buttons, tech names, chips |
 | Headings | Instrument Serif (400) | `h1`, `h2`, `h3`, set globally in `globals.css` |
-| Numerals | Instrument Serif (`font-num`) | Large step and metric numbers, `tabular-nums` |
+| Numerals | Instrument Serif (`font-num`) | Large concern and metric numbers, `tabular-nums` |
 
 - Do not use monospace or `font-mono` anywhere.
 
@@ -38,7 +38,7 @@ These are the only text sizes. Never use raw `text-xs`…`text-4xl` or `text-[�
 | --- | --- | --- | --- |
 | Display | `h1` (global) | clamp 2.125-3.25rem | Hero title |
 | Title | `h2` (global) | 2.25rem | `SectionTitle` |
-| Item | `h3` (global) | 1.5rem | Project, step names |
+| Item | `h3` (global) | 1.5rem | Project, concern names |
 | Numeral | `text_numeral` | 30 → 36px | Metric numbers |
 | Heading | `text_heading` | 20 → 24px | Sans item headings (about questions, their numbers), stack labels |
 | Lead | `text_lead` | 18 → 20px | Hero subtitle + rotator, intro paragraphs, info values |
@@ -86,7 +86,7 @@ These are the only text sizes. Never use raw `text-xs`…`text-4xl` or `text-[�
 
 Same look as home; only the content differs.
 
-- Career sections (`src/components/career/`, shell `src/components/shared/ui/section.tsx`, data in `src/data/career-sections.ts`): Overview, Frontend, Backend, DevOps, Stack, each a `.section` with a `SectionTitle`.
+- Career sections (`src/components/career/`, shell `src/components/shared/ui/section.tsx`, data in `src/data/career.ts`): Overview, Frontend, Backend, DevOps, Stack, each a `.section` with a `SectionTitle`.
 - Hero uses the same perspective grid as home.
-- Steps are rows divided by thin lines; the `h3` reads `01 / Label`: accent `font-num` number, muted serif slash, label, all at `h3` size. Stack rows pair an uppercase label with names separated by muted serif slashes. References are link pills with a small `live` marker.
+- Concerns are rows divided by thin lines; the `h3` reads `01 / Label`: accent `font-num` number, muted serif slash, label, all at `h3` size. Stack rows pair an uppercase label with names separated by muted serif slashes. References are link pills with a small `live` marker.
 - Reveal order inside a section: title, then content with `delay` from 0.3s, staggered.
