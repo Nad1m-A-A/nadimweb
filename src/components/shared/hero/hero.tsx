@@ -15,7 +15,14 @@ export default function Hero({
       className="-mt-(--header-h) border-b border-border"
     >
       <div className="relative flex min-h-[61.5vh] flex-1 flex-col items-center justify-center gap-4 overflow-hidden pt-(--header-h) text-center">
-        {background}
+        <FadeIn
+          duration={0.8}
+          delay={0}
+          trigger="mount"
+          className="pointer-events-none absolute inset-0"
+        >
+          {background}
+        </FadeIn>
         <FadeIn duration={0.8} delay={0.12} trigger="mount">
           <h1 className="relative z-10">{title}</h1>
         </FadeIn>
