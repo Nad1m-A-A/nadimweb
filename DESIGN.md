@@ -40,7 +40,7 @@ These are the only text sizes. Never use raw `text-xs`…`text-4xl` or `text-[�
 | Title | `h2` (global) | 2.25rem | `SectionTitle` |
 | Item | `h3` (global) | 1.5rem | Project, concern names |
 | Numeral | `text_numeral` | 30 → 36px | Metric numbers |
-| Heading | `text_heading` | 20 → 24px | Sans item headings (about questions, their numbers), stack labels |
+| Heading | `text_heading` | 20 → 24px | Sans item headings, stack labels |
 | Lead | `text_lead` | 18 → 20px | Hero subtitle + rotator, intro paragraphs, info values |
 | Body | `text_body` | 15 → 16px | Paragraphs, `text-muted`, max `max-w-2xl` |
 | Label | `text_label` | 14px | Nav, `dt` labels, metric captions, chips |

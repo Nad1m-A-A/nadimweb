@@ -3,9 +3,7 @@ import FadeIn from "@/components/shared/ui/fade-in";
 import { host } from "@/lib/host";
 import type { ReferencesProps } from "@/types/career";
 
-export default function References({
-  references,
-}: ReferencesProps) {
+export default function References({ references }: ReferencesProps) {
   return (
     <FadeIn delay={0.3} className="space-y-3">
       <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">

@@ -1,5 +1,3 @@
-"use client";
-
 import HeroPerspectiveGrid from "@/components/shared/hero/hero-perspective-grid";
 import SpecialtyRotator from "@/components/shared/hero/specialty-rotator";
 import FadeIn from "@/components/shared/ui/fade-in";

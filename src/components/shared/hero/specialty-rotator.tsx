@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap/register";
 import { specialties } from "@/data/hero";
+import { fullMotionQuery, reducedMotionQuery } from "@/lib/motion";
 
 const LAST = specialties.length - 1;
 const HOLD_S = 1.5;
@@ -25,7 +26,7 @@ export default function SpecialtyRotator() {
 
       const mm = gsap.matchMedia();
 
-      mm.add("(prefers-reduced-motion: reduce)", () => {
+      mm.add(reducedMotionQuery, () => {
         const items = Array.from(track.children) as HTMLElement[];
         const h = items[0]?.offsetHeight || 28;
         gsap.set(track, { y: -LAST * h });
@@ -37,7 +38,7 @@ export default function SpecialtyRotator() {
         });
       });
 
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
+      mm.add(fullMotionQuery, () => {
         const items = Array.from(track.children) as HTMLElement[];
         const lineHeight = () => items[0]?.offsetHeight || 28;
 

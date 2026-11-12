@@ -1,5 +1,3 @@
-"use client";
-
 import FadeIn from "@/components/shared/ui/fade-in";
 import type { SectionTitleProps } from "@/types/ui";
 

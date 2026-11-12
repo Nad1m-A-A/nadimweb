@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/shared/layout/site-nav";
 import SiteMobileNav from "@/components/shared/layout/site-mobile-nav";
 import FadeIn from "@/components/shared/ui/fade-in";
 import { contactHref, socialLinks } from "@/data/info";
+import { useScrolledPast } from "@/hooks/use-scrolled-past";
 import type { SiteHeaderProps } from "@/types/nav";
 
 /** The one header for every page: logo lockup, section links, socials and an optional Contact button. */
@@ -15,14 +15,7 @@ export default function SiteHeader({
   contact = false,
   social = false,
 }: SiteHeaderProps) {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const update = () => setScrolled(window.scrollY > 8);
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
-  }, []);
+  const scrolled = useScrolledPast(8);
 
   return (
     <FadeIn

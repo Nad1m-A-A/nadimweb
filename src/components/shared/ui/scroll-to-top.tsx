@@ -1,25 +1,20 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback } from "react";
 import { FaCaretUp } from "react-icons/fa";
+import { useScrolledPast } from "@/hooks/use-scrolled-past";
+import { prefersReducedMotion } from "@/lib/motion";
 
 const SHOW_AFTER_PX = 320;
 
 export default function ScrollToTop() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const update = () => setVisible(window.scrollY > SHOW_AFTER_PX);
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
-  }, []);
+  const visible = useScrolledPast(SHOW_AFTER_PX);
 
   const scrollToTop = useCallback(() => {
-    const reduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion() ? "auto" : "smooth",
+    });
   }, []);
 
   return (

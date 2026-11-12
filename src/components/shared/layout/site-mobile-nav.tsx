@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { LuEllipsisVertical } from "react-icons/lu";
 import { useScrollSpy } from "@/hooks/use-scroll-spy";
+import { calmEase } from "@/lib/motion";
 import type { SiteMobileNavProps } from "@/types/nav";
 
 /** Three-dots trigger with a small dropdown of section links; small screens only. Closes on scroll. */
@@ -57,7 +58,7 @@ export default function SiteMobileNav({ links }: SiteMobileNavProps) {
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
-            transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.2, ease: calmEase }}
             className="absolute right-0 top-full mt-3 min-w-40 rounded-[2px] border border-border bg-background py-1"
           >
             <ul className="flex flex-col">
