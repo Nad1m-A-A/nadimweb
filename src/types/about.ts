@@ -9,7 +9,4 @@ export type FocusItem = {
 export type AboutItem = {
   id: string;
   question: string;
-} & (
-  | { kind: "list"; items: FocusItem[] }
-  | { kind: "text"; body: string }
-);
+} & ({ kind: "list"; items: FocusItem[] } | { kind: "text"; body: string });

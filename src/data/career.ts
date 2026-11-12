@@ -124,7 +124,16 @@ export const stack = {
     },
     {
       label: "Frontend",
-      items: ["React", "Next.js", "Inertia.js", "Tailwind CSS", "shadcn/ui", "TanStack Query & Table", "GSAP", "Motion"],
+      items: [
+        "React",
+        "Next.js",
+        "Inertia.js",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "TanStack Query & Table",
+        "GSAP",
+        "Motion",
+      ],
     },
     {
       label: "Backend",

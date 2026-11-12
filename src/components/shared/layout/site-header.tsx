@@ -25,7 +25,9 @@ export default function SiteHeader({
       data-site-header
       data-scrolled={scrolled ? "" : undefined}
       className={`sticky top-0 z-50 border-b transition-[background-color,border-color] duration-300 ${
-        scrolled ? "border-border bg-background" : "border-transparent bg-transparent"
+        scrolled
+          ? "border-border bg-background"
+          : "border-transparent bg-transparent"
       }`}
     >
       <div
@@ -34,11 +36,18 @@ export default function SiteHeader({
         }`}
       >
         <Link
-          className="flex items-center w-fit"
+          className="flex w-fit items-center"
           href="/"
           aria-label="Nadim Web, home"
         >
-          <Image src="/logo/wordmark-light.svg" alt="" width={178} height={32} priority className="h-6 w-auto" />
+          <Image
+            src="/logo/wordmark-light.svg"
+            alt=""
+            width={178}
+            height={32}
+            priority
+            className="h-6 w-auto"
+          />
         </Link>
 
         <div className="hidden md:block">
@@ -63,7 +72,7 @@ export default function SiteHeader({
           {contact ? (
             <a
               href={contactHref}
-              className="rounded-[2px] bg_accent_shift px-3 py-1 text_label font-medium text-white"
+              className="bg_accent_shift rounded-[2px] px-3 py-1 text_label font-medium text-white"
             >
               Contact
             </a>

@@ -7,9 +7,7 @@ export default function SectionTitle({
 }: SectionTitleProps) {
   return (
     <FadeIn>
-      <h2
-        className={`w-fit text-foreground leading-3 pb-2 px-1 ${className}`}
-      >
+      <h2 className={`w-fit px-1 pb-2 leading-3 text-foreground ${className}`}>
         {children}
       </h2>
     </FadeIn>

@@ -15,12 +15,7 @@ export type FadeInProps = {
   as?: "div" | "header";
 } & Omit<
   HTMLMotionProps<"div">,
-  | "children"
-  | "initial"
-  | "whileInView"
-  | "animate"
-  | "transition"
-  | "viewport"
+  "children" | "initial" | "whileInView" | "animate" | "transition" | "viewport"
 >;
 
 export type SectionTitleProps = {

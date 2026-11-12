@@ -117,7 +117,7 @@ export default function SpecialtyRotator() {
         {specialties.map((phrase) => (
           <p
             key={phrase}
-            className="whitespace-nowrap text_lead font-normal text-accent text-start"
+            className="text-start text_lead font-normal whitespace-nowrap text-accent"
           >
             {phrase}
           </p>

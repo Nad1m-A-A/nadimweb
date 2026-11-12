@@ -13,7 +13,7 @@ export default function References({ references }: ReferencesProps) {
               href={reference.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-between gap-2 rounded-[2px] bg_accent_shift px-3 py-1.5 text-start text_label font-medium text-white"
+              className="bg_accent_shift flex w-full items-center justify-between gap-2 rounded-[2px] px-3 py-1.5 text-start text_label font-medium text-white"
             >
               <span className="min-w-0 truncate">{host(reference.url)}</span>
               <LuArrowUpRight aria-hidden className="size-3.5 shrink-0" />

@@ -8,7 +8,7 @@ export default function Overview() {
   return (
     <Section id={overview.id} label={overview.label} divided={false}>
       <FadeIn delay={0.3}>
-        <p className="text_body text-justify text-muted">{overview.body}</p>
+        <p className="text-justify text_body text-muted">{overview.body}</p>
       </FadeIn>
       <Metrics metrics={overview.metrics} />
       <References references={referencesFor("overview")} />

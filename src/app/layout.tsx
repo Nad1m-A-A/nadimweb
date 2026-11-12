@@ -11,7 +11,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sansFont.className} ${sansFont.variable} ${serifFont.variable} h-full font-light antialiased`}>
+    <html
+      lang="en"
+      className={`${sansFont.className} ${sansFont.variable} ${serifFont.variable} h-full font-light antialiased`}
+    >
       <body className="flex min-h-full flex-col">
         {children}
         <ScrollToTop />

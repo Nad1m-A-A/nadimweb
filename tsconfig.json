@@ -30,5 +30,9 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "src/lib/avatar", "src/components/ui/flying-avatar.tsx"]
+  "exclude": [
+    "node_modules",
+    "src/lib/avatar",
+    "src/components/ui/flying-avatar.tsx"
+  ]
 }

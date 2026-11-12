@@ -6,14 +6,14 @@ The home page (`/`) is the reference for the whole site. Every page follows thes
 
 Tokens live in `src/app/globals.css`
 
-| Token | Value | Use |
-| --- | --- | --- |
-| `background` | `#fffdf8` | Page background |
-| `foreground` | `#3d3929` | Main text |
-| `muted` | `#6f685e` | Secondary text, body copy under headings |
-| `surface` | `#f7f3eb` | Cards and soft fills (often `bg-surface/50`) |
-| `accent` | `#4274D9` | Buttons, title highlight, icons, active states |
-| `border` | `foreground` at 12% in srgb mixed with `background` | All lines and dividers |
+| Token        | Value                                               | Use                                            |
+| ------------ | --------------------------------------------------- | ---------------------------------------------- |
+| `background` | `#fffdf8`                                           | Page background                                |
+| `foreground` | `#3d3929`                                           | Main text                                      |
+| `muted`      | `#6f685e`                                           | Secondary text, body copy under headings       |
+| `surface`    | `#f7f3eb`                                           | Cards and soft fills (often `bg-surface/50`)   |
+| `accent`     | `#4274D9`                                           | Buttons, title highlight, icons, active states |
+| `border`     | `foreground` at 12% in srgb mixed with `background` | All lines and dividers                         |
 
 - Text selection: solid accent background, white text.
 - `live` `#2e9e6b`: only for tiny "live" markers (career references). Never for text or fills.
@@ -22,11 +22,11 @@ Tokens live in `src/app/globals.css`
 
 Fonts live in `src/lib/fonts.ts`; `--font-sans`, `--font-serif` and `--font-num` are wired in `src/app/globals.css` (`@theme inline`). The root layout applies the sans on `html`.
 
-| Role | Font | Use |
-| --- | --- | --- |
-| Text | Geist (300 default, 500 for emphasis) | Body, nav, labels, buttons, tech names, chips |
-| Headings | Instrument Serif (400) | `h1`, `h2`, `h3`, set globally in `globals.css` |
-| Numerals | Instrument Serif (`font-num`) | Large concern and metric numbers, `tabular-nums` |
+| Role     | Font                                  | Use                                              |
+| -------- | ------------------------------------- | ------------------------------------------------ |
+| Text     | Geist (300 default, 500 for emphasis) | Body, nav, labels, buttons, tech names, chips    |
+| Headings | Instrument Serif (400)                | `h1`, `h2`, `h3`, set globally in `globals.css`  |
+| Numerals | Instrument Serif (`font-num`)         | Large concern and metric numbers, `tabular-nums` |
 
 - Do not use monospace or `font-mono` anywhere.
 
@@ -34,16 +34,16 @@ Fonts live in `src/lib/fonts.ts`; `--font-sans`, `--font-serif` and `--font-num`
 
 These are the only text sizes. Never use raw `text-xs`…`text-4xl` or `text-[…]` on text; pick a role. Each role sets size and line height for both breakpoints.
 
-| Role | Class | Size (mobile → sm) | Use |
-| --- | --- | --- | --- |
-| Display | `h1` (global) | clamp 2.125-3.25rem | Hero title |
-| Title | `h2` (global) | 2.25rem | `SectionTitle` |
-| Item | `h3` (global) | 1.5rem | Project, concern names |
-| Numeral | `text_numeral` | 30 → 36px | Metric numbers |
-| Heading | `text_heading` | 20 → 24px | Sans item headings, stack labels |
-| Lead | `text_lead` | 18 → 20px | Hero subtitle + rotator, intro paragraphs, info values |
-| Body | `text_body` | 15 → 16px | Paragraphs, `text-muted`, max `max-w-2xl` |
-| Label | `text_label` | 14px | Nav, `dt` labels, metric captions, chips |
+| Role    | Class          | Size (mobile → sm)  | Use                                                    |
+| ------- | -------------- | ------------------- | ------------------------------------------------------ |
+| Display | `h1` (global)  | clamp 2.125-3.25rem | Hero title                                             |
+| Title   | `h2` (global)  | 2.25rem             | `SectionTitle`                                         |
+| Item    | `h3` (global)  | 1.5rem              | Project, concern names                                 |
+| Numeral | `text_numeral` | 30 → 36px           | Metric numbers                                         |
+| Heading | `text_heading` | 20 → 24px           | Sans item headings, stack labels                       |
+| Lead    | `text_lead`    | 18 → 20px           | Hero subtitle + rotator, intro paragraphs, info values |
+| Body    | `text_body`    | 15 → 16px           | Paragraphs, `text-muted`, max `max-w-2xl`              |
+| Label   | `text_label`   | 14px                | Nav, `dt` labels, metric captions, chips               |
 
 - `h1`/`h2`/`h3` rules are unlayered: utility sizes, weights and tracking on them are ignored, so don't add any.
 - Buttons: `text_label font-medium`, `px-3 py-1.5` (`py-1` in the header).

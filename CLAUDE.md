@@ -8,10 +8,10 @@ Personal site of Nadim Alaa, fullstack web developer.
 
 Two audiences, two pages. The home page's look is the design for the whole site.
 
-| Route | Audience | Purpose |
-| --- | --- | --- |
-| `/` | Clients | Multi-section page showing work and service packages. _Sections: TBD_ |
-| `/career` | Recruiters | |
+| Route     | Audience   | Purpose                                                               |
+| --------- | ---------- | --------------------------------------------------------------------- |
+| `/`       | Clients    | Multi-section page showing work and service packages. _Sections: TBD_ |
+| `/career` | Recruiters |                                                                       |
 
 ## Stack
 

@@ -59,7 +59,7 @@ export default function SiteMobileNav({ links }: SiteMobileNavProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.2, ease: calmEase }}
-            className="absolute right-0 top-full mt-3 min-w-40 rounded-[2px] border border-border bg-background py-1"
+            className="absolute top-full right-0 mt-3 min-w-40 rounded-[2px] border border-border bg-background py-1"
           >
             <ul className="flex flex-col">
               {links.map((link) => {

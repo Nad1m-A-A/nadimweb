@@ -10,7 +10,7 @@ export default function Metrics({ metrics }: MetricsProps) {
           delay={0.3 + index * 0.06}
           className="w-1/2 px-2 text-center sm:w-auto"
         >
-          <dd className="font-num font-normal text_numeral tracking-tight tabular-nums text-foreground">
+          <dd className="font-num text_numeral font-normal tracking-tight text-foreground tabular-nums">
             {metric.value}
           </dd>
           <dt className="mt-1 text_label text-muted">{metric.label}</dt>
