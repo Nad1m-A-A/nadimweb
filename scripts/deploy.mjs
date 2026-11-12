@@ -1,3 +1,6 @@
+// Cache the key passphrase once (Windows ssh-agent keeps it across reboots):
+//   ssh-add "E:\projects\personal\my-server\my-server-private-key"
+//
 // npm run deploy: check, build locally, ship .next/standalone to the server, swap, restart.
 // A failed check or build stops here: nothing is uploaded.
 import { execSync, spawnSync } from "node:child_process";
@@ -35,9 +38,9 @@ const ssh = (remote, stdin = "inherit") => {
 console.log("==> Checking");
 sh("npm run check");
 
-// Windows keeps the key in ~/.ssh, Ubuntu in the vps project folder.
+// Windows keeps the key in the my-server project folder, Ubuntu in the vps project folder.
 const KEY_PATHS = [
-  join(homedir(), ".ssh/my vps private key"),
+  "E:/projects/personal/my-server/my-server-private-key",
   join(homedir(), "projects/personal/vps/my-server-private-key"),
 ];
 
