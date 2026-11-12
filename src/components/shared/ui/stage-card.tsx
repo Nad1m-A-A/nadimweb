@@ -22,7 +22,8 @@ export default function StageCard({
               src={image}
               alt={`${name} screenshot`}
               fill
-              sizes="(min-width: 640px) 360px, 100vw"
+              sizes="(min-width: 640px) 560px, 150vw"
+              quality={90}
               className="object-cover object-left-top"
             />
           </div>
