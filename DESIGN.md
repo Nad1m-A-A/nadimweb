@@ -36,7 +36,7 @@ These are the only text sizes. Never use raw `text-xs`…`text-4xl` or `text-[�
 
 | Role    | Class          | Size (mobile → sm)  | Use                                                    |
 | ------- | -------------- | ------------------- | ------------------------------------------------------ |
-| Display | `h1` (global)  | clamp 2.125-3.25rem | Hero title                                             |
+| Display | `h1` (global)  | clamp 2.75-3.25rem  | Hero title                                             |
 | Title   | `h2` (global)  | 2.25rem             | `SectionTitle`                                         |
 | Item    | `h3` (global)  | 1.5rem              | Project, concern names                                 |
 | Numeral | `text_numeral` | 30 → 36px           | Metric numbers                                         |
