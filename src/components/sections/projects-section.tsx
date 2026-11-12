@@ -29,7 +29,7 @@ export default function ProjectsSection() {
         const next = projects[index];
         setActive(index);
 
-        if (!next.mockup) {
+        if (!next.screenshot) {
             setIsImageLoading(false);
             setIsAnimating(false);
             return;
@@ -76,9 +76,9 @@ export default function ProjectsSection() {
                                         transition={{ duration: fadeDuration, ease: fadeEase }}
                                         className="absolute inset-0"
                                     >
-                                        {project.mockup ? (
+                                        {project.screenshot ? (
                                             <Image
-                                                src={project.mockup}
+                                                src={project.screenshot}
                                                 alt={project.title ?? project.name}
                                                 fill
                                                 sizes="500px"

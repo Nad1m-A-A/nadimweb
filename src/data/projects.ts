@@ -19,11 +19,9 @@ export type Project = {
   highlights?: string[];
   /** Home carousel: GitHub link. */
   repo?: string;
-  /** Home carousel: device mockup image. */
-  mockup?: string;
-  /** Home carousel: `false` blurs the mockup. */
+  /** Home carousel: `false` blurs the screenshot. */
   available?: boolean;
-  /** Not shown yet. */
+  /** Project screenshot under `/public/projects`. */
   screenshot?: string;
   summary?: string;
   tags?: string[];
@@ -45,7 +43,6 @@ export const projects: Project[] = [
       "Fully documented, with a bilingual user guide and in-app developer guide for contributors",
     ],
     repo: "https://github.com/Nad1m-A-A/dashboards-demo",
-    mockup: "/dashboards-mockup.webp",
   },
   {
     name: "Gold System",
@@ -59,7 +56,6 @@ export const projects: Project[] = [
       "Delivers precise material tracking and real-time metrics across all production stages",
       "Seamless, secure in-app subscription payments and renewals",
     ],
-    mockup: "/erp-mockup.webp",
   },
   {
     name: "CV Editor",
@@ -91,7 +87,6 @@ export const projects: Project[] = [
       "SEO-ready structure with metadata, crawlable pages, and bilingual content",
       "Marketing site for programs, founder story, and journal — built for a Dubai media training brand",
     ],
-    mockup: "/carne-mockup.png",
     screenshot: "/projects/carne-media.png",
     summary:
       "Bilingual site for a Dubai media training center, with a 3D model and an office map.",
@@ -115,7 +110,18 @@ export const projects: Project[] = [
       "Full Arabic/English bilingual experience across the site",
       "Positions Code 10 as a UAE-local software house with solution and client storytelling",
     ],
-    mockup: "/code10-mockup.webp",
+  },
+  {
+    name: "American Aesthetic",
+    title: "American Aesthetic Medical Center",
+    url: "https://americanaestheticmc.com",
+    color: null,
+    features: ["projects", "overview", "frontend"],
+    highlights: [
+      "React SPA with a multi-page marketing architecture for enterprise systems, healthcare, e-invoicing, and apps",
+      "Full Arabic/English bilingual experience across the site",
+      "Positions Code 10 as a UAE-local software house with solution and client storytelling",
+    ],
   },
   {
     name: "MHM Collection",

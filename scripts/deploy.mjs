@@ -1,8 +1,8 @@
 // npm run deploy: build locally, ship .next/standalone to the server, swap, restart.
 // A failed build stops here: nothing is uploaded.
 import { execSync, spawnSync } from "node:child_process";
-import { cpSync, mkdtempSync, openSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
-import { tmpdir } from "node:os";
+import { cpSync, existsSync, mkdtempSync, openSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { homedir, tmpdir } from "node:os";
 import { join } from "node:path";
 
 const HOST = "my-server";
@@ -20,9 +20,15 @@ const ssh = (remote, stdin = "inherit") => {
   if (r.status !== 0) throw new Error(`ssh failed (${r.status}): ${remote}`);
 };
 
+// Windows keeps the key in ~/.ssh, Ubuntu in the vps project folder.
+const KEY_PATHS = [join(homedir(), ".ssh/my vps private key"), join(homedir(), "projects/personal/vps/my-server-private-key")];
+
 if (spawnSync("ssh-add", ["-l"]).status !== 0) {
-  console.error('No key in ssh-agent. Run: ssh-add "$HOME/.ssh/my vps private key"');
-  process.exit(1);
+  const key = KEY_PATHS.find((p) => existsSync(p));
+  if (!key || spawnSync("ssh-add", [key], { stdio: "inherit" }).status !== 0) {
+    console.error(`No key in ssh-agent and none could be added. Looked in:\n  ${KEY_PATHS.join("\n  ")}`);
+    process.exit(1);
+  }
 }
 
 console.log("==> Building");

@@ -3,6 +3,7 @@ import { HeroStackVisual } from "@/components/sections/hero-stack-visual";
 import AboutSection from "@/components/sections/about-section";
 import ProjectsSection from "@/components/sections/projects-section";
 import InfoSection from "@/components/sections/info-section";
+import StageSection from "@/components/sections/stage-section";
 import { SiteHeader } from "@/components/layout/site-header";
 
 const navLinks = [
@@ -23,6 +24,8 @@ export default function Home() {
       <ProjectsSection />
 
       <InfoSection />
+
+      <StageSection />
     </>
   );
 }
