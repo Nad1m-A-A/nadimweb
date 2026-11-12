@@ -5,15 +5,15 @@ import { HeroPerspectiveGrid } from "@/components/sections/hero-perspective-grid
 import { SpecialtyRotator } from "@/components/sections/specialty-rotator";
 import FadeIn from "@/components/ui/fade-in";
 
-type HeroSectionProps = {
+type HeroProps = {
   title?: string;
   background?: ReactNode;
 };
 
-export default function HeroSection({
+export default function Hero({
   title = "Fullstack Web Developer",
   background = <HeroPerspectiveGrid />,
-}: HeroSectionProps) {
+}: HeroProps) {
   return (
     <section id="intro" data-site-hero className="-mt-(--header-h) border-b border-border">
       <div className="relative flex min-h-[61.5vh] flex-1 flex-col items-center justify-center gap-4 overflow-hidden pt-(--header-h) text-center">

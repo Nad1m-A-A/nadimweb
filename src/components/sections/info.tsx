@@ -5,11 +5,11 @@ import FadeIn from "@/components/ui/fade-in";
 import SectionTitle from "@/components/ui/section-title";
 import { infoItems } from "@/data/info";
 
-export default function InfoSection() {
+export default function Info() {
   return (
     <section
       id="info"
-      className="section inner-section min-h-[calc(100vh-var(--header-h)+3.5rem)]"
+      className="section inner-section"
     >
       <div className="app_container">
         <SectionTitle>Info</SectionTitle>

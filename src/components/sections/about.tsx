@@ -72,7 +72,7 @@ const list: AboutItem[] = [
   },
 ];
 
-export default function AboutSection() {
+export default function About() {
   const [openId, setOpenId] = useState<string | null>(list[0].id);
 
   return (

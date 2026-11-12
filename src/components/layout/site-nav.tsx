@@ -18,7 +18,7 @@ export function SiteNav({ links }: SiteNavProps) {
   return (
     <nav
       aria-label="Page sections"
-      className="scrollbar-none -mx-4 flex w-[calc(100%+2rem)] items-center justify-between gap-6 overflow-x-auto px-4 md:mx-0 md:w-auto md:justify-center md:gap-8 md:px-0"
+      className="flex items-center justify-center gap-8"
     >
       {links.map((link, index) => {
         const selected = link.id === activeId;

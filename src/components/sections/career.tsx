@@ -1,16 +1,16 @@
 import CareerTabPanel from "@/components/sections/career-tab-panel";
 import type { CareerTab } from "@/data/career-tabs";
 
-type CareerSectionProps = {
+type CareerProps = {
   tab: CareerTab;
   /** Sections after the first get the border divider line. */
   divided?: boolean;
 };
 
-export default function CareerSection({
+export default function Career({
   tab,
   divided = false,
-}: CareerSectionProps) {
+}: CareerProps) {
   return (
     <section
       id={tab.id}

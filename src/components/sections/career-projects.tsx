@@ -4,7 +4,7 @@ import StageCard from "@/components/ui/stage-card";
 import { projects } from "@/data/projects";
 import { stageImages } from "@/data/stage";
 
-export default function StageSection() {
+export default function CareerProjects() {
   return (
     <section id="projects" className="section inner-section">
       <div className="app_container">

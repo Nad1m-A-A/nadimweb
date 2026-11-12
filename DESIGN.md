@@ -58,7 +58,7 @@ These are the only text sizes. Never use raw `text-xs`â€¦`text-4xl` or `text-[â€
 - Section shell: `.section` (`py-20`, background) around `.app_container` (`mx-auto max-w-3xl px-6 md:px-0 space-y-8`).
 - Sections after the first get `.inner-section`: a 1px `border` line as wide as the content, on top.
 - Each section starts with a `SectionTitle`.
-- One sticky header on every page (`SiteHeader`, `h-16`, bottom border): logo and "Nadim Web" side by side on the left, section links in the middle (`SiteNav`, active link follows scroll), GitHub, LinkedIn and Contact on the right. Pages only pass their links. On phones the links drop to a second row.
+- One sticky header on every page (`SiteHeader`, `h-16`, bottom border): logo on the left, section links in the middle (`SiteNav`, active link follows scroll), optional GitHub/LinkedIn (`social`) and Contact (`contact`) on the right. Pages only pass their links. On phones, section links hide behind a three-dots icon that opens `SiteMobileNav`, a small dropdown that closes on scroll.
 - Section links are plain `#id` anchors with smooth scrolling. `.section` has a scroll margin (`--header-h`) so the section title lands just under the header. The last section is tall enough to reach that spot.
 
 ## Surfaces

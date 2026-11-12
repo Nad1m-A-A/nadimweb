@@ -1,14 +1,12 @@
-import HeroSection from "@/components/sections/hero-section";
+import Hero from "@/components/sections/hero";
 import { HeroStackVisual } from "@/components/sections/hero-stack-visual";
-import AboutSection from "@/components/sections/about-section";
-import ProjectsSection from "@/components/sections/projects-section";
-import InfoSection from "@/components/sections/info-section";
-import StageSection from "@/components/sections/stage-section";
+import About from "@/components/sections/about";
+import Info from "@/components/sections/info";
+import CareerProjects from "@/components/sections/career-projects";
 import { SiteHeader } from "@/components/layout/site-header";
 
 const navLinks = [
   { id: "about", label: "About" },
-  { id: "projects", label: "Projects" },
   { id: "info", label: "Info" },
 ];
 
@@ -16,16 +14,14 @@ export default function Home() {
   return (
     <>
       <SiteHeader links={navLinks} contact />
-      <HeroSection />
+      <Hero />
       <HeroStackVisual />
 
-      <AboutSection />
+      <About />
 
-      <ProjectsSection />
+      <Info />
 
-      <InfoSection />
-
-      <StageSection />
+      <CareerProjects />
     </>
   );
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/layout/site-header";
-import HeroSection from "@/components/sections/hero-section";
-import CareerSections from "@/components/sections/career-sections";
-import StageSection from "@/components/sections/stage-section";
+import Hero from "@/components/sections/hero";
+import Careers from "@/components/sections/careers";
+import CareerProjects from "@/components/sections/career-projects";
 import { careerTabs } from "@/data/career-tabs";
 
 export const metadata: Metadata = { title: "Career" };
@@ -15,10 +15,10 @@ const navLinks = [
 export default function CareerPage() {
   return (
     <>
-      <SiteHeader links={navLinks} />
-      <HeroSection title="Product Engineer" />
-      <CareerSections />
-      <StageSection />
+      <SiteHeader links={navLinks} social />
+      <Hero title="Product Engineer" />
+      <Careers />
+      <CareerProjects />
     </>
   );
 }
