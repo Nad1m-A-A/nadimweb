@@ -1,15 +1,9 @@
-import type { Metadata } from "next";
 import "./globals.css";
-import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import ScrollToTop from "@/components/shared/ui/scroll-to-top";
 import { sansFont, serifFont } from "@/lib/fonts";
-export const metadata: Metadata = {
-  title: {
-    default: "Nadim Web | Product Engineer",
-    template: "%s | Nadim Web",
-  },
-  description:
-    "Nadim Web, Product Engineer Specialized in Enterprise Systems & Modern Websites.",
-};
+import { siteMetadata } from "@/data/metadata";
+
+export const metadata = siteMetadata;
 
 export default function RootLayout({
   children,

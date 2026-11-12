@@ -1,24 +1,28 @@
-import type { Metadata } from "next";
-import { SiteHeader } from "@/components/layout/site-header";
-import Hero from "@/components/sections/hero";
-import Careers from "@/components/sections/careers";
-import CareerProjects from "@/components/sections/career-projects";
-import { careerTabs } from "@/data/career-tabs";
+import SiteHeader from "@/components/shared/layout/site-header";
+import Hero from "@/components/shared/hero/hero";
+import Overview from "@/components/career/overview";
+import Frontend from "@/components/career/frontend";
+import Backend from "@/components/career/backend";
+import Devops from "@/components/career/devops";
+import Stack from "@/components/career/stack";
+import Projects from "@/components/shared/projects";
+import { careerNavLinks } from "@/data/nav";
+import { careerHeroTitle } from "@/data/hero";
+import { careerMetadata } from "@/data/metadata";
 
-export const metadata: Metadata = { title: "Career" };
-
-const navLinks = [
-  ...careerTabs.map((tab) => ({ id: tab.id, label: tab.label })),
-  { id: "projects", label: "Projects" },
-];
+export const metadata = careerMetadata;
 
 export default function CareerPage() {
   return (
     <>
-      <SiteHeader links={navLinks} social />
-      <Hero title="Product Engineer" />
-      <Careers />
-      <CareerProjects />
+      <SiteHeader links={careerNavLinks} social />
+      <Hero title={careerHeroTitle} />
+      <Overview />
+      <Frontend />
+      <Backend />
+      <Devops />
+      <Stack />
+      <Projects />
     </>
   );
 }

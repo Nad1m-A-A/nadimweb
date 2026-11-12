@@ -5,13 +5,16 @@
   --foreground: #3d3929;
   --muted: #6f685e;
   --surface: #f7f3eb;
-  --accent: #4274D9;
-  --live: #2e9e6b;
+  --accent: #4274d9;
   --border: color-mix(in srgb, var(--foreground) 12%, var(--background));
   --header-h: 4rem;
   /* Grain flood + hero wash strength (keep SVG flood-opacity in sync) */
   --grain-strength: 7%;
-  --grain-wash: color-mix(in oklab, var(--accent) var(--grain-strength), var(--background));
+  --grain-wash: color-mix(
+    in oklab,
+    var(--accent) var(--grain-strength),
+    var(--background)
+  );
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='2' stitchTiles='stitch' result='turbulence'/%3E%3CfeColorMatrix in='turbulence' type='luminanceToAlpha' result='alpha'/%3E%3CfeFlood flood-color='%234274D9' flood-opacity='0.07' result='blue'/%3E%3CfeComposite in='blue' in2='alpha' operator='in'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -21,7 +24,6 @@
   --color-muted: var(--muted);
   --color-surface: var(--surface);
   --color-accent: var(--accent);
-  --color-live: var(--live);
   --font-sans: var(--font-geist), system-ui, sans-serif;
   --font-serif: var(--font-instrument-serif), Georgia, serif;
   --font-num: var(--font-serif);
@@ -50,23 +52,23 @@ img {
 }
 
 /* Type scale: the only text sizes besides h1/h2/h3. See DESIGN.md "Type". */
-@utility text-numeral {
+@utility text_numeral {
   @apply text-3xl leading-none sm:text-4xl;
 }
 
-@utility text-heading {
+@utility text_heading {
   @apply text-xl leading-snug sm:text-2xl;
 }
 
-@utility text-lead {
+@utility text_lead {
   @apply text-lg leading-7 sm:text-xl sm:leading-8;
 }
 
-@utility text-body {
+@utility text_body {
   @apply text-[0.9375rem] leading-7 sm:text-base sm:leading-7;
 }
 
-@utility text-label {
+@utility text_label {
   @apply text-sm leading-6;
 }
 
@@ -77,17 +79,9 @@ img {
     scroll-margin-top: calc(var(--header-h) - 5rem + 1.5rem);
   }
 
-  .inner-section:before {
+  .inner_section:before {
     content: "";
     @apply absolute top-0 left-1/2 h-px w-[calc(100%-3rem)] max-w-3xl -translate-x-1/2 bg-border md:w-full;
-  }
-
-  .scrollbar-none {
-    scrollbar-width: none;
-  }
-
-  .scrollbar-none::-webkit-scrollbar {
-    display: none;
   }
 
   .app_container {
@@ -95,23 +89,24 @@ img {
   }
 
   /* Larger gradient + position shift = "moving" fill on hover */
-  .bg-accent-shift {
+  .bg_accent_shift {
     background-color: var(--accent);
-    background-image: linear-gradient(120deg,
-        var(--accent) 0%,
-        color-mix(in oklab, var(--accent) 65%, rgba(255, 255, 255, 0.541)) 40%,
-        var(--accent) 55%,
-        color-mix(in oklab, var(--accent) 80%, black) 100%);
+    background-image: linear-gradient(
+      120deg,
+      var(--accent) 0%,
+      color-mix(in oklab, var(--accent) 65%, rgba(255, 255, 255, 0.541)) 40%,
+      var(--accent) 55%,
+      color-mix(in oklab, var(--accent) 80%, black) 100%
+    );
     background-size: 220% 100%;
     background-position: 100% 50%;
     transition: background-position 0.55s ease;
   }
 
-  .bg-accent-shift:hover {
+  .bg_accent_shift:hover {
     background-position: 0% 50%;
   }
 }
-
 
 /* Type pairing: serif for headings. Unlayered so it wins over size and weight utilities. Instrument Serif runs small, so sizes are bumped. */
 h1,

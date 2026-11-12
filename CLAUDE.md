@@ -19,7 +19,9 @@ Two audiences, two pages. The home page's look is the design for the whole site.
 - Tailwind CSS v4 (tokens in `src/app/globals.css`, `@theme inline`)
 
 - Visual rules live in [DESIGN.md](DESIGN.md); read it before building UI.
-- Components: `src/components/{layout,sections,ui,icons,providers}`, kebab-case filenames.
+- Components: `src/components/<page>/` for one page (e.g. `career`), `src/components/shared/` for components used by more than one page. Kebab-case filenames, default exports.
+- All types (including component props) live in `src/types/`, one file per domain: `project`, `career`, `about`, `nav`, `ui`.
+- Custom CSS classes are snake_case (`app_container`, `text_body`).
 - When writing JSX, consider whether it should be its own component. Extract when:
   1. There are so many sibling elements that it gets hard to maintain.
   2. It will likely be reused in multiple places.
